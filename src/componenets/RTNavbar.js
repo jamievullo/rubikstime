@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container'
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { NavDropdown, Form } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
+import brand from '../assets/rubikstimetrackerlogo.png'
 
 
 class RTNavbar extends React.Component {
@@ -16,7 +17,7 @@ class RTNavbar extends React.Component {
             <Container className="p-0" fluid={true} >
                 <Navbar className="navbar" expand='md'>
                     <Navbar.Brand>
-                        Rubiks Time Tracker
+                    <img src={brand} style={{height: "50px", width: "340px"}} alt=""/>
                     </Navbar.Brand>
                     <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                         <Navbar.Collapse id="navbar-toggle">
