@@ -17,7 +17,7 @@ class Registration extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
+        console.log(this.state)
     }
 
     render() {
@@ -26,7 +26,7 @@ class Registration extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Control id="username" type="text" name="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} />
                     <Form.Control id="password" type="password" name="password" placeholder='Password' value={this.state.password} onChange={this.handleChange} />
-                    <Button>Submit</Button>
+                    <Button type='submit'>Submit</Button>
                 </Form>
             </div>
         )

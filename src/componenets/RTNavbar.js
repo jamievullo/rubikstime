@@ -24,16 +24,12 @@ class RTNavbar extends React.Component {
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
                                     <span className="mr-auto" style={{color: "black"}}>Registration</span>
                                         } id="basic-dropdown">
-                                    {/* <NavDropdown.Item> */}
                                         <Registration />
-                                    {/* </NavDropdown.Item> */}
                                 </NavDropdown>
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
                                     <span className="mr-auto" style={{color: "black"}}>Sign In</span>
                                         } id="basic-dropdown">
-                                    <NavDropdown.Item >
                                         <SignIn />
-                                    </NavDropdown.Item>
                                 </NavDropdown>
                                 
                                 <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'>Home</Link>
