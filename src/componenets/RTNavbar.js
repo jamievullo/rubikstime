@@ -6,7 +6,7 @@ import Registration from '../pages/Registration'
 import Store from '../pages/Store'
 import Container from 'react-bootstrap/Container'
 import { BrowserRouter as Route, Link } from 'react-router-dom';
-import { NavDropdown } from 'react-bootstrap';
+import { NavDropdown, Form } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
 
 
@@ -16,31 +16,28 @@ class RTNavbar extends React.Component {
             <Container className="p-0" fluid={true} >
                 <Navbar className="navbar" expand='md'>
                     <Navbar.Brand>
-
+                        Rubiks Time Tracker
                     </Navbar.Brand>
                     <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                         <Navbar.Collapse id="navbar-toggle">
                             <Nav className="ml-auto">
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
-                                    <span className="mr-auto" style={{color: "black"}}>Account</span>
+                                    <span className="mr-auto" style={{color: "black"}}>Registration</span>
                                         } id="basic-dropdown">
-                                    
-                                    <NavDropdown.Item as={Link} to='/' onClick={this.handleLogoutClick}>
-                                        Log Out
-                                    </NavDropdown.Item>
-                                    
-                                    <NavDropdown.Item as={Link} to='/login'>
-                                        Log In
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to='/signup'>
-                                        Create Account
-                                    </NavDropdown.Item> 
-                                
+                                    {/* <NavDropdown.Item> */}
+                                        <Registration />
+                                    {/* </NavDropdown.Item> */}
                                 </NavDropdown>
+                                <NavDropdown className="account" style={{margin: 'inherit'}} title={
+                                    <span className="mr-auto" style={{color: "black"}}>Sign In</span>
+                                        } id="basic-dropdown">
+                                    <NavDropdown.Item >
+                                        <SignIn />
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                                
                                 <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'>Home</Link>
-                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><Registration /></Link>
-                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><SignIn /></Link>
-                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><Store /></Link>
+                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/store'>Store</Link>
                             </Nav>
                         </Navbar.Collapse>  
                 </Navbar> 
