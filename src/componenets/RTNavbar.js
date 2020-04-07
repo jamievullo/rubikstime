@@ -22,7 +22,7 @@ class RTNavbar extends React.Component {
                         <Navbar.Collapse id="navbar-toggle">
                             <Nav className="ml-auto">
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
-                                    <span className="mr-auto" style={{color: "white"}}>Account</span>
+                                    <span className="mr-auto" style={{color: "black"}}>Account</span>
                                         } id="basic-dropdown">
                                     
                                     <NavDropdown.Item as={Link} to='/' onClick={this.handleLogoutClick}>
@@ -34,16 +34,15 @@ class RTNavbar extends React.Component {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to='/signup'>
                                         Create Account
-                                    </NavDropdown.Item>
-                                    
-                                    
+                                    </NavDropdown.Item> 
+                                
                                 </NavDropdown>
-                                <Link className="nav-link" style={{color: "white", margin: 'inherit'}} to='/'>Home</Link>
-                           </Nav>
-                        </Navbar.Collapse>
-                    <Registration />
-                    <SignIn />
-                    <Store />
+                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'>Home</Link>
+                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><Registration /></Link>
+                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><SignIn /></Link>
+                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'><Store /></Link>
+                            </Nav>
+                        </Navbar.Collapse>  
                 </Navbar> 
             </Container>           
         )

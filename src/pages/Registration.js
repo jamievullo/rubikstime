@@ -4,7 +4,7 @@ class Registration extends React.Component {
     render() {
         return (
             <div>
-                Hello from registration
+                Registration
             </div>
         )
     }

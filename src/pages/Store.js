@@ -4,7 +4,7 @@ class Store extends React.Component {
     render() {
         return (
             <div>
-                Hello from the motherfukin navvy
+                Store
             </div>
         )
     }
