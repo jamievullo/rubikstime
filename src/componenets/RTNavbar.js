@@ -9,6 +9,7 @@ import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { NavDropdown, Form } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
 import brand from '../assets/rubikstimetrackerlogo2.png'
+import Footer from './Footer';
 
 
 class RTNavbar extends React.Component {
@@ -23,21 +24,22 @@ class RTNavbar extends React.Component {
                         <Navbar.Collapse id="navbar-toggle">
                             <Nav className="ml-auto">
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
-                                    <span className="mr-auto" style={{color: "black"}}>Registration</span>
+                                    <span className="mr-auto" style={{color: "#325bfb"}}>Registration</span>
                                         } id="basic-dropdown">
                                         <Registration />
                                 </NavDropdown>
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
-                                    <span className="mr-auto" style={{color: "black"}}>Sign In</span>
+                                    <span className="mr-auto" style={{color: "#325bfb"}}>Sign In</span>
                                         } id="basic-dropdown">
                                         <SignIn />
                                 </NavDropdown>
                                 
-                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/'>Home</Link>
-                                <Link className="nav-link" style={{color: "black", margin: 'inherit'}} to='/store'>Store</Link>
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Store</Link>
                             </Nav>
                         </Navbar.Collapse>  
                 </Navbar> 
+                
             </Container>           
         )
     }
