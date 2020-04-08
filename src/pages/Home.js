@@ -1,9 +1,9 @@
 import React from 'react'
-import Timer from '../componenets/Timer'
-import Scrambles from '../componenets/Scrambles'
-import OverallStatistics from '../componenets/OverallStatistics'
-import RecentTimes from '../componenets/RecentTimes'
-import CubeSelector from '../componenets/CubeSelector'
+import Timer from '../components/Timer'
+import Scrambles from '../components/Scrambles'
+import OverallStatistics from '../components/OverallStatistics'
+import RecentTimes from '../components/RecentTimes'
+import CubeSelector from '../components/CubeSelector'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { Col } from 'react-bootstrap'

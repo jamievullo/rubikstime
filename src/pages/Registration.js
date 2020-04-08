@@ -23,10 +23,10 @@ class Registration extends React.Component {
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Control id="username" type="text" name="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} />
-                    <Form.Control id="password" type="password" name="password" placeholder='Password' value={this.state.password} onChange={this.handleChange} />
-                    <Button type='submit'>Submit</Button>
+                <Form style={{width: '12em'}} onSubmit={this.handleSubmit}>
+                    <Form.Control style={{width: '10em', marginLeft: '1em'}} id="username" type="text" name="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} />
+                    <Form.Control style={{width: '10em', marginLeft: '1em'}} id="password" type="password" name="password" placeholder='Password' value={this.state.password} onChange={this.handleChange} />
+                    <center><Button type='submit' style={{backgroundColor: '#ffc600'}}>Submit</Button></center>
                 </Form>
             </div>
         )

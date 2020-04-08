@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import RTNavbar from './componenets/RTNavbar';
+import RTNavbar from './components/RTNavbar';
 import Store from './pages/Store'
 import Home from './pages/Home'
-import Footer from './componenets/Footer';
+import Footer from './components/Footer';
 
 function App() {
 

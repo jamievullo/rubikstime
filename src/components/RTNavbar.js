@@ -15,7 +15,7 @@ class RTNavbar extends React.Component {
             <Container className="p-0" fluid={true} >
                 <Navbar className="navbar" expand='md'>
                     <Navbar.Brand>
-                    <img src={brand} style={{height: "50px", width: "340px"}} alt=""/>
+                    <img src={brand} style={{height: "50px", width: "300px"}} alt=""/>
                     </Navbar.Brand>
                     <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                         <Navbar.Collapse id="navbar-toggle">
@@ -32,7 +32,7 @@ class RTNavbar extends React.Component {
                                 </NavDropdown>
                                 
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
-                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Store</Link>
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
                             </Nav>
                         </Navbar.Collapse>  
                 </Navbar> 
