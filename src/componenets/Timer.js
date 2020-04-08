@@ -1,19 +1,30 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 export default class Timer extends React.Component {
 
   state = {
     timerOn: false,
-    timerState: 0,
-    timerTime: 0
+    timerStart: 0,
+    timerTime: 0,
+    listening: false
   }
 
-  componentDidMount() {
-    document.addEventListener("keypress", this.handleKeyPress)
+  handleSessionStart = e => {
+    document.addEventListener("keypress", this.handleKeyPress)   
+  }
+
+  handleSessionStop = e => {
+    document.removeEventListener("keypress", this.handleKeyPress)
   }
 
   handleKeyPress = e => {
-    this.state.timerOn ? this.stopTimer() : this.startTimer()
+    // onspacebar will start and stop time & hitting enter/return will reset timer
+    if (e.keyCode === 32) {
+      this.state.timerOn ? this.stopTimer() : this.startTimer()
+    } else if (e.keyCode === 13) {
+      this.resetTimer()
+    }
   }
 
   startTimer = () => {
@@ -35,6 +46,7 @@ export default class Timer extends React.Component {
   };
 
   resetTimer = () => {
+    clearInterval(this.timer)
     this.setState({
       timerStart: 0,
       timerTime: 0
@@ -47,11 +59,18 @@ export default class Timer extends React.Component {
     let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-    // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
 
     return (
       <div id="stopwatch">
-        { minutes } : { seconds } : { centiseconds }
+        
+        <div>
+          { minutes } : { seconds } : { centiseconds }
+        </div>
+
+          <Button onClick={this.handleSessionStart}>Start Session</Button>
+          <Button onClick={this.handleSessionStop}>Stop Session</Button>
+          {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
+
       </div>
     )
   }
