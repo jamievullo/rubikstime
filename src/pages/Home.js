@@ -14,13 +14,13 @@ class Home extends React.Component {
             <div>                
                 <Container fluid={true} style={{paddingBottom: "4em"}}>
                     <Row className="justify-content-center"> 
-                        <Col md='10'><CubeSelector /></Col>
+                        <Col md='6' style={{marginBottom: '2em'}}><CubeSelector /></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='6'><Scrambles /></Col>
+                        <Col md='5'><Scrambles /></Col>
                     </Row>                        
                     <Row className="justify-content-center">
-                        <Col md='10'><Timer/></Col>
+                        <Col md='8'><Timer/></Col>
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='2'><RecentTimes /></Col>

@@ -3,14 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import SignIn from '../pages/SignIn'
 import Registration from '../pages/Registration'
-import Store from '../pages/Store'
 import Container from 'react-bootstrap/Container'
-import { BrowserRouter as Route, Link } from 'react-router-dom';
-import { NavDropdown, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
-import brand from '../assets/rubikstimetrackerlogo2.png'
-import Footer from './Footer';
-
+import brand from '../assets/rubikstimetrackerlogo3.png'
 
 class RTNavbar extends React.Component {
     render() {

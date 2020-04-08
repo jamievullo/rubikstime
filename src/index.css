@@ -24,3 +24,37 @@ code {
 .dropdown-toggle::after {
   color: #325bfb;
 }
+
+.timer {
+  font-size: 9em;
+}
+
+@media screen and (max-width: 400px) {
+  .timer {
+      font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .timer {
+      font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timer {
+      font-size: 6em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .timer {
+      font-size: 7em;
+  }
+}
+
+@media screen and (max-width: 1125px) {
+  .timer {
+      font-size: 8em;
+  }
+}
