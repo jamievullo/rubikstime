@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container'
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { NavDropdown, Form } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
-import brand from '../assets/rubikstimetrackerlogo.png'
+import brand from '../assets/rubikstimetrackerlogo2.png'
 
 
 class RTNavbar extends React.Component {
