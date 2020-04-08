@@ -6,8 +6,7 @@ export default class Timer extends React.Component {
   state = {
     timerOn: false,
     timerStart: 0,
-    timerTime: 0,
-    listening: false
+    timerTime: 0
   }
 
   handleSessionStart = e => {
