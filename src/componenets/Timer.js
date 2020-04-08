@@ -13,7 +13,7 @@ export default class Timer extends React.Component {
   }
 
   handleKeyPress = e => {
-    console.log(e.keyCode)
+    this.state.timerOn ? this.stopTimer() : this.startTimer()
   }
 
   startTimer = () => {
