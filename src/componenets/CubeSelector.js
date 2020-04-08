@@ -1,14 +1,13 @@
 import React from 'react'
 
-class RecentTimes extends React.Component {
+class CubeSelector extends React.Component {
     render() {
         return (
             <div>
-                Recent Times
+                Cube Selector
             </div>
         )
     }
 }
 
-export default RecentTimes
-
+export default CubeSelector
