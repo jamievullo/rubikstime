@@ -11,66 +11,112 @@ import six from '../assets/6x6Cube.jpg'
 import seven from '../assets/7x7Cube.jpg'
 import mega from '../assets/Megaminx.jpg'
 import pyra from '../assets/Pyraminx.jpg'
+import CubeCard from '../components/CubeCard'
 
-export default function Store(props) {
-    return (
-        <div>
-            <Jumbotron className="hero bg-transparent jumbotron-fluid p-0">
-                <Container fluid={true}>
-                    <Row className="justify-content-center py-0">
-                        <Col md={8} sm={12}>
-                        <h1 style={{color: "#364182"}} className="display-3 font-weight-bolder">
-                            <center>Rubiks Time Store</center>
-                        </h1>
-                        <h2 style={{color: "#364182"}}><center>Load up on our T-Shirts!!</center></h2>
-                        </Col>
+export default class Store extends React.Component {
+
+    state = {
+        cubes: [
+            {
+                image: two,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: three,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: four,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: five,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: six,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: seven,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: mega,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: pyra,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+        ]
+    }
+
+    render() {
+        let cubeCards = this.state.cubes.map(cube => {
+            return (
+                <Col sm='3'>
+                    <CubeCard cube={cube}/>
+                </Col>
+            )
+        })
+        return (
+            <div>
+                <Jumbotron className="hero bg-transparent jumbotron-fluid p-0">
+                    <Container fluid={true}>
+                        <Row className="justify-content-center py-0">
+                            <Col md={8} sm={12}>
+                            <h1 style={{color: "#364182"}} className="display-3 font-weight-bolder">
+                                <center>Rubiks Time Store</center>
+                            </h1>
+                            <h2 style={{color: "#364182"}}><center>Load up on our T-Shirts!!</center></h2>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Jumbotron>
+                    <Row md='5' className="justify-content-center">
+                        <Col><center><h3 style={{color: "#364182"}}>Cubes For Sale</h3></center></Col>
                     </Row>
-                </Container>
-            </Jumbotron>
-                <Row md='5' className="justify-content-center">
-                    <Col><center><h3 style={{color: "#364182"}}>Cubes For Sale</h3></center></Col>
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='1' src={two} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='2' src={three} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='3' src={four} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='4' src={five} style={{height: "70px", width: "80px"}} alt=""/></Col>
+                    <Container fluid>
+                        <Row>
+                            {cubeCards}
+                        </Row>
+                    </Container>
                     
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='5' src={six} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='6' src={seven} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='7' src={mega} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='8' src={pyra} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='1' src={two} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='2' src={three} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='3' src={four} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='4' src={five} style={{height: "70px", width: "80px"}} alt=""/></Col>                    
-                </Row>
-                <Row md='5' className="justify-content-center">
-                    <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='5' src={six} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='6' src={seven} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='7' src={mega} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='8' src={pyra} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='1' src={two} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='2' src={three} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='3' src={four} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='4' src={five} style={{height: "70px", width: "80px"}} alt=""/></Col>                    
-                </Row>
-                <Row md='4' style={{marginBottom: '3em'}}>
-                    <Col><img id='5' src={six} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='6' src={seven} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='7' src={mega} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                    <Col><img id='8' src={pyra} style={{height: "70px", width: "80px"}} alt=""/></Col>
-                </Row>
-                <div style={{marginBottom: '10em'}}></div>
-        </div>
-    )
+                    <div style={{marginBottom: '10em'}}></div>
+            </div>
+        )
+    }
 }
