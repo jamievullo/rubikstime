@@ -81,13 +81,77 @@ export default class Store extends React.Component {
                 description: "Awesome action, will lower your times!!",
                 price: "$23.99"
             },
+            {
+                image: two,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: three,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: four,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: five,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: six,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: seven,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: mega,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
+            {
+                image: pyra,
+                name: "V251",
+                brand: "Gan",
+                size: "2 x 2",
+                description: "Awesome action, will lower your times!!",
+                price: "$23.99"
+            },
         ]
     }
 
     render() {
         let cubeCards = this.state.cubes.map(cube => {
             return (
-                <Col sm='3'>
+                <Col sm='2'>
                     <CubeCard cube={cube}/>
                 </Col>
             )
@@ -107,13 +171,16 @@ export default class Store extends React.Component {
                     </Container>
                 </Jumbotron>
                     <Row md='5' className="justify-content-center">
-                        <Col><center><h3 style={{color: "#364182"}}>Cubes For Sale</h3></center></Col>
+                        <Col><center><h3 style={{color: "#364182"}}>The Cubes</h3></center></Col>
                     </Row>
                     <Container fluid>
                         <Row>
                             {cubeCards}
                         </Row>
                     </Container>
+                    <Row md='5' className="justify-content-center">
+                        <Col><center><h3 style={{color: "#364182", marginTop: "2em"}}>The Merch</h3></center></Col>
+                    </Row>
                     
                     <div style={{marginBottom: '10em'}}></div>
             </div>

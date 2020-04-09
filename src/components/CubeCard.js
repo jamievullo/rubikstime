@@ -13,14 +13,14 @@ class CubeCard extends React.Component {
         return (
             <div>
                 <Card>
-                    <CardImg top width="100%" src={this.props.cube.image} alt="Card image cap" />
+                    <CardImg top width="100%" src={this.props.cube.image} style={{height: '160px'}} alt="Card image cap" />
                     <CardBody>
                     <CardTitle>{this.props.cube.name}</CardTitle>
                     <CardSubtitle>{this.props.cube.brand}</CardSubtitle>
                     <CardSubtitle>{this.props.cube.size}</CardSubtitle>
                     <CardText>{this.props.cube.description}</CardText>
                     <CardSubtitle>Price:{this.props.cube.price}</CardSubtitle>
-                    <Button>Button</Button>
+                    <Button>Buy Now</Button>
                     </CardBody>
                 </Card>
             </div>
