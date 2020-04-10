@@ -60,7 +60,7 @@ export default class Timer extends React.Component {
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
 
     return (
-      <div id="stopwatch">
+      <div id="stopwatch" style={{marginBottom: '2em'}}>
         
         <div className='timer'>
           { minutes } : { seconds } : { milliseconds }

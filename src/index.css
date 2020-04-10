@@ -26,35 +26,48 @@ code {
 }
 
 .timer {
-  font-size: 9em;
+  width: 100%;
+  font-size: 8em;
+  text-align: center;
+  margin: 0px auto;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1125px) {
   .timer {
-      font-size: 4em;
+      font-size: 7em;
   }
 }
-
+@media screen and (max-width: 1000px) {
+  .timer {
+      font-size: 6em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .timer {
+      font-size: 5em;
+  }
+}
 @media screen and (max-width: 550px) {
   .timer {
       font-size: 5em;
   }
 }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 430px) {
   .timer {
-      font-size: 6em;
+      font-size: 4em;
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .timer {
-      font-size: 7em;
-  }
+
+.card-image {
+  height: 260px;
+  object-fit: cover;
 }
 
-@media screen and (max-width: 1125px) {
-  .timer {
-      font-size: 8em;
-  }
+#recent-times {
+  font-style: oblique;
+}
+
+#lifetime-stats {
+  font-style: oblique;
 }

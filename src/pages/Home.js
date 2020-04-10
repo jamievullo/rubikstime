@@ -23,8 +23,8 @@ class Home extends React.Component {
                         <Col md='8'><Timer/></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='2'><RecentTimes /></Col>
-                        <Col md='2'><OverallStatistics /></Col>
+                        <Col md='4'><RecentTimes /></Col>
+                        <Col md='4'><OverallStatistics /></Col>
                     </Row>
                 </Container>               
             </div>

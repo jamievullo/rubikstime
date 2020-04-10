@@ -18,6 +18,7 @@ export default class Store extends React.Component {
     state = {
         cubes: [
             {
+                id: 0,
                 image: two,
                 name: "V251",
                 brand: "Gan",
@@ -26,6 +27,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 1,
                 image: three,
                 name: "V251",
                 brand: "Gan",
@@ -34,6 +36,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 2,
                 image: four,
                 name: "V251",
                 brand: "Gan",
@@ -42,6 +45,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 3,
                 image: five,
                 name: "V251",
                 brand: "Gan",
@@ -50,6 +54,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 4,
                 image: six,
                 name: "V251",
                 brand: "Gan",
@@ -58,6 +63,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 5,
                 image: seven,
                 name: "V251",
                 brand: "Gan",
@@ -66,6 +72,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 6,
                 image: mega,
                 name: "V251",
                 brand: "Gan",
@@ -74,6 +81,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 7,
                 image: pyra,
                 name: "V251",
                 brand: "Gan",
@@ -82,6 +90,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 8,
                 image: two,
                 name: "V251",
                 brand: "Gan",
@@ -90,6 +99,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 9,
                 image: three,
                 name: "V251",
                 brand: "Gan",
@@ -98,6 +108,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 10,
                 image: four,
                 name: "V251",
                 brand: "Gan",
@@ -106,6 +117,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 11,
                 image: five,
                 name: "V251",
                 brand: "Gan",
@@ -114,6 +126,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 12,
                 image: six,
                 name: "V251",
                 brand: "Gan",
@@ -122,6 +135,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 13,
                 image: seven,
                 name: "V251",
                 brand: "Gan",
@@ -130,6 +144,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 14,
                 image: mega,
                 name: "V251",
                 brand: "Gan",
@@ -138,6 +153,7 @@ export default class Store extends React.Component {
                 price: "$23.99"
             },
             {
+                id: 15,
                 image: pyra,
                 name: "V251",
                 brand: "Gan",
@@ -151,7 +167,7 @@ export default class Store extends React.Component {
     render() {
         let cubeCards = this.state.cubes.map(cube => {
             return (
-                <Col sm='2'>
+                <Col md='3' key={cube.id}>
                     <CubeCard cube={cube}/>
                 </Col>
             )
@@ -171,16 +187,13 @@ export default class Store extends React.Component {
                     </Container>
                 </Jumbotron>
                     <Row md='5' className="justify-content-center">
-                        <Col><center><h3 style={{color: "#364182"}}>The Cubes</h3></center></Col>
+                        <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
                     </Row>
                     <Container fluid>
                         <Row>
                             {cubeCards}
                         </Row>
                     </Container>
-                    <Row md='5' className="justify-content-center">
-                        <Col><center><h3 style={{color: "#364182", marginTop: "2em"}}>The Merch</h3></center></Col>
-                    </Row>
                     
                     <div style={{marginBottom: '10em'}}></div>
             </div>

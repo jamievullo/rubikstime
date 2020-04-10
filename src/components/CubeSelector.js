@@ -15,14 +15,15 @@ class CubeSelector extends React.Component {
         currentCube: ''
     }
 
-    handleCubeClick = (id, cube) => {
+    handleCubeClick = (e, id) => {
+        console.log(e.target.id)
         let currentCube = [...this.state.currentCube];
 
         currentCube[id].selected = currentCube[id].selected ? false : true;
 
         currentCube.forEach(cube => {
             if(cube.id !== id) {
-                cube.selected = false;
+                currentCube.selected = false;
             }
         })
 
@@ -34,7 +35,7 @@ class CubeSelector extends React.Component {
     render() {
         return (
             <div>
-                <img id='1' src={two} style={{height: "55px", width: "57px"}} alt=""/>
+                <img id='1' onClick={this.handleCubeClick} src={two} style={{height: "55px", width: "57px"}} alt=""/>
                 <img id='2' src={three} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='3' src={four} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='4' src={five} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
