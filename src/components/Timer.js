@@ -65,10 +65,14 @@ export default class Timer extends React.Component {
         <div className='timer'>
           { minutes } : { seconds } : { milliseconds }
         </div>
+        <div>
+          <center>
 
           <Button onClick={this.handleSessionStart}>Start Session</Button>
           <Button onClick={this.handleSessionStop}>Stop Session</Button>
           {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
+          </center>
+        </div>
 
       </div>
     )

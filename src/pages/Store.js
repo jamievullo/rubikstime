@@ -12,11 +12,13 @@ import seven from '../assets/7x7Cube.jpg'
 import mega from '../assets/Megaminx.jpg'
 import pyra from '../assets/Pyraminx.jpg'
 import CubeCard from '../components/CubeCard'
+import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
 export default class Store extends React.Component {
 
     state = {
-        cubes: [
+        inputValue: '',
+        items: [
             {
                 id: 0,
                 image: two,
@@ -164,31 +166,57 @@ export default class Store extends React.Component {
         ]
     }
 
+    handleInputChange = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            inputValue: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
     render() {
-        let cubeCards = this.state.cubes.map(cube => {
+        let cubeCards = this.state.items.map(item => {
             return (
-                <Col md='3' key={cube.id}>
-                    <CubeCard cube={cube}/>
+                <Col md='3' key={item.id}>
+                    <CubeCard item={item}/>
                 </Col>
             )
         })
         return (
             <div>
-                <Jumbotron className="hero bg-transparent jumbotron-fluid p-0">
+                <Jumbotron style={{height: '300px'}} className="hero bg-transparent jumbotron-fluid p-0">
                     <Container fluid={true}>
                         <Row className="justify-content-center py-0">
-                            <Col md={8} sm={12}>
+                            {/* <Col md={8} sm={12}>
                             <h1 style={{color: "#364182"}} className="display-3 font-weight-bolder">
                                 <center>Rubiks Time Store</center>
                             </h1>
                             <h2 style={{color: "#364182"}}><center>Load up on our T-Shirts!!</center></h2>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </Container>
                 </Jumbotron>
                     <Row md='5' className="justify-content-center">
                         <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
                     </Row>
+                
+                    <Row>
+                        <Col md={{ size: 'auto', offset: 7 }}>                        
+                            <InputGroup style={{marginBottom: '1em'}}>
+                                <Input onChange={this.handleInputChange}/>
+                                <InputGroupAddon addonType="append">
+                                    <Button style={{backgroundColor: '#ffc600', color: '#364182'}}>
+                                    Search Items
+                                    </Button>
+                                </InputGroupAddon>
+                            </InputGroup>
+                        </Col>
+                    </Row>
+
+
                     <Container fluid>
                         <Row>
                             {cubeCards}

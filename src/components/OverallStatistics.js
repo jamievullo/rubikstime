@@ -12,14 +12,12 @@ class OverallStatistics extends React.Component {
                     <CardBody>
                         <CardTitle style={{textAlign: 'center'}}>Lifetime Stats</CardTitle>
                         <div id='lifetime-stats'>
-                        <CardSubtitle>Personal Best (cube) -</CardSubtitle>
-                        <CardSubtitle>Lifetime Average (cube) -</CardSubtitle>
-                        <CardSubtitle>Best Session Time -</CardSubtitle>
-                        <CardSubtitle>Overall Session Average (cube) -</CardSubtitle>
-                        <CardSubtitle>Best Session Average of 5 (cube) -</CardSubtitle>
-                        <CardSubtitle>Best lifetime Average of 5 (cube) -</CardSubtitle>
-                        <br />
-                        <CardSubtitle>Average: </CardSubtitle>
+                            <CardSubtitle>Personal Best (cube) -</CardSubtitle>
+                            <CardSubtitle>Lifetime Average (cube) -</CardSubtitle>
+                            <CardSubtitle>Best Session Time -</CardSubtitle>
+                            <CardSubtitle>Overall Session Average (cube) -</CardSubtitle>
+                            <CardSubtitle>Best Session Average of 5 (cube) -</CardSubtitle>
+                            <CardSubtitle>Best lifetime Average of 5 (cube) -</CardSubtitle>
                         </div>
                     </CardBody>
                 </Card>

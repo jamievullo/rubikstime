@@ -10,13 +10,13 @@ class CubeCard extends React.Component {
         return (
             <div>
                 <Card>
-                    <CardImg className='card-image' top width="100%" src={this.props.cube.image} alt="Card image" />
+                    <CardImg className='card-image' top width="100%" src={this.props.item.image} alt="Card image" />
                     <CardBody>
-                        <CardTitle>Name: {this.props.cube.name}</CardTitle>
-                        <CardSubtitle>Brand: {this.props.cube.brand}</CardSubtitle>
-                        <CardSubtitle>Size: {this.props.cube.size}</CardSubtitle>
-                        <CardText>{this.props.cube.description}</CardText>
-                        <CardSubtitle>Price: {this.props.cube.price}</CardSubtitle>
+                        <CardTitle>Name: {this.props.item.name}</CardTitle>
+                        <CardSubtitle>Brand: {this.props.item.brand}</CardSubtitle>
+                        <CardSubtitle>Size: {this.props.item.size}</CardSubtitle>
+                        <CardText>{this.props.item.description}</CardText>
+                        <CardSubtitle>Price: {this.props.item.price}</CardSubtitle>
                         <Button>Buy Now</Button>
                     </CardBody>
                 </Card>

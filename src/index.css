@@ -71,3 +71,13 @@ code {
 #lifetime-stats {
   font-style: oblique;
 }
+
+.hero {
+  background-image: url('../src/assets/RubiksStoreBG.png');
+  /* background-attachment: fixed ; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* width: 100%; */
+  object-fit: cover;
+}

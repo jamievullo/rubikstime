@@ -26,7 +26,8 @@ class Home extends React.Component {
                         <Col md='4'><RecentTimes /></Col>
                         <Col md='4'><OverallStatistics /></Col>
                     </Row>
-                </Container>               
+                </Container> 
+                <div style={{height: '3em'}}></div>              
             </div>
         )
     }
