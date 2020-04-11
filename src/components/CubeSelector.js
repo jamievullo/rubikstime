@@ -9,6 +9,8 @@ import mega from '../assets/Megaminx.jpg'
 import pyra from '../assets/Pyraminx.jpg'
 import blind from '../assets/Blindfolded.jpg'
 import skewb from '../assets/Skewb.jpeg'
+import oneHand from '../assets/OneHanded.png'
+import squareOne from '../assets/SquareOne.png'
 
 class CubeSelector extends React.Component {
 
@@ -44,7 +46,9 @@ class CubeSelector extends React.Component {
                 <img id='6' src={seven} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='7' src={mega} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='8' src={pyra} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
-                <img id='9' src={skewb} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
+                <img id='8' src={squareOne} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
+                <img id='9' src={skewb} style={{height: "55px", width: "57px"}} alt=""/>
+                <img id='9' src={oneHand} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='10' src={blind} style={{height: "55px", width: "57px"}} alt=""/>
             </div>
         )

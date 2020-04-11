@@ -35,7 +35,7 @@ class Home extends React.Component {
             <div>                
                 <Container fluid={true} style={{paddingBottom: "4em"}}>
                     <Row className="justify-content-center"> 
-                        <Col md='6' style={{marginBottom: '2em'}}><CubeSelector /></Col>
+                        <Col md='7' style={{marginBottom: '2em'}}><CubeSelector /></Col>
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='7'><Scrambles times={this.state.times} /></Col>
