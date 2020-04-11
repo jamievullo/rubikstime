@@ -1,12 +1,13 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 export default class Timer extends React.Component {
 
   state = {
     timerOn: false,
     timerStart: 0,
-    timerTime: 0
+    timerTime: 0,
+    primed: false
   }
 
   componentDidMount() {
@@ -15,17 +16,32 @@ export default class Timer extends React.Component {
 
   handleSessionStart = e => {
     e.preventDefault()
-    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)   
+    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)
+    e.keyCode === 32 && document.addEventListener("keypress", this.zeroOutTimer)   
   }
 
   handleSessionStop = e => {
     document.removeEventListener("keyup", this.handleKeyPress)
   }
 
+  zeroOutTimer = e => {
+    // this.stopTimer()
+    if (this.state.timerOn === false ) {
+      this.setState({
+        timerTime: 0,
+        timerStart: 0,
+        primed: true
+        // timerOn: false
+      })
+    }
+  }
+
   handleKeyPress = e => {
     // onspacebar will start and stop time & hitting enter/return will reset timer
     if (e.keyCode === 32) {
-      this.state.timerOn ? this.stopTimer() : this.startTimer()
+      
+      this.state.timerOn ? this.resetTimer() : this.startTimer()
+      
     } else if (e.keyCode === 13) {
       this.resetTimer()
     }
@@ -34,8 +50,9 @@ export default class Timer extends React.Component {
   startTimer = () => {
     this.setState({
       timerOn: true,
-      timerTime: this.state.timerTime,
-      timerStart: Date.now() - this.state.timerTime
+      timerTime: 0,
+      timerStart: Date.now() - 0,
+      primed: false
     });
     this.timer = setInterval(() => {
       this.setState({
@@ -44,22 +61,19 @@ export default class Timer extends React.Component {
     }, 10);
   };
 
-  stopTimer = () => {
-    this.setState({ timerOn: false });
-    clearInterval(this.timer);
-  };
-
   resetTimer = () => {
     clearInterval(this.timer)
     this.props.timesCollection(this.state.timerTime)
     this.setState({
-      timerStart: 0,
-      timerTime: 0
+      // timerStart: 0,
+      // timerTime: 0,
+      timerOn: false,
+      primed: false
     });
   };
 
   render() {
-
+    const color = this.state.primed ? 'green' : '#364182'
     const { timerTime } = this.state;
     let milliseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
@@ -68,18 +82,10 @@ export default class Timer extends React.Component {
     return (
       <div id="stopwatch" style={{marginBottom: '2em'}}>
         
-        <div className='timer' style={{color: '#364182'}}>
+        <div className='timer' style={{color: color}}>
           { minutes } : { seconds } : { milliseconds }
         </div>
-        <div>
-          <center>
-
-          {/* <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button> */}
-          <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button>
-          {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
-          </center>
-        </div>
-
+    
       </div>
     )
   }
