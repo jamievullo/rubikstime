@@ -9,8 +9,13 @@ export default class Timer extends React.Component {
     timerTime: 0
   }
 
+  componentDidMount() {
+    document.addEventListener("keypress", this.handleSessionStart)
+  }
+
   handleSessionStart = e => {
-    document.addEventListener("keyup", this.handleKeyPress)   
+    // console.log(e)
+    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)   
   }
 
   handleSessionStop = e => {
@@ -68,7 +73,7 @@ export default class Timer extends React.Component {
         <div>
           <center>
 
-          <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button>
+          {/* <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button> */}
           <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button>
           {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
           </center>
