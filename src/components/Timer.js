@@ -15,11 +15,23 @@ export default class Timer extends React.Component {
 
   handleSessionStart = e => {
     e.preventDefault()
-    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)   
+    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)
+    e.keyCode === 32 && document.addEventListener("keypress", this.zeroOutTimer)   
   }
 
   handleSessionStop = e => {
     document.removeEventListener("keyup", this.handleKeyPress)
+  }
+
+  zeroOutTimer = e => {
+    // this.stopTimer()
+    if (this.state.timerOn === false ) {
+      this.setState({
+        timerTime: 0,
+        timerStart: 0,
+        // timerOn: false
+      })
+    }
   }
 
   handleKeyPress = e => {
