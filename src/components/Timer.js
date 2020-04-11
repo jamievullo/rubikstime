@@ -14,7 +14,7 @@ export default class Timer extends React.Component {
   }
 
   handleSessionStart = e => {
-    // console.log(e)
+    e.preventDefault()
     e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)   
   }
 
