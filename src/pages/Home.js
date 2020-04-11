@@ -44,7 +44,7 @@ class Home extends React.Component {
                         <Col md='8'><Timer timesCollection={this.timesCollection}/></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='4'><RecentTimes /></Col>
+                        <Col md='4'><RecentTimes last5={this.state.last5}/></Col>
                         <Col md='4'><OverallStatistics /></Col>
                         <Col md='4'><UpcomingWCAEvents /></Col>
                     </Row>
