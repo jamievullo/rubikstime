@@ -2,14 +2,15 @@ import React from 'react'
 
 class Scrambles extends React.Component {
 
+    //need to call this function when timer stops after starting and when the app first runs
     makeScramble() {
         let options = ["F", "F2", "F'", "R", "R2", "R'", "U", "U2", "U'", "B", "B2", "B'", "L", "L2", "L'", "D", "D2", "D'"]
         let numOptions = [0, 1, 2, 3, 4, 5] // 0 = F, 1 = R, 2 = U, 3 = B, 4 = L, 5 = D
         let scramble = []
         let scrambleMoves = []
-        let bad = true
+        let badScramble = true
     
-        while (bad) {
+        while (badScramble) {
             scramble = []
             for (let i = 0; i < 20; i++) {
                 scramble.push(numOptions[this.getRandomInt(6)])
@@ -17,14 +18,15 @@ class Scrambles extends React.Component {
             // check if moves directly next to each other involve the same number/letter
             for (let i = 0; i < 20 - 1; i++) {
                 if (scramble[i] === scramble[i + 1]) {
-                    bad = true
+                    badScramble = true
                     break
                 } else {
-                    bad = false
+                    badScramble = false
                 }
             }
             console.log(scramble)
         }
+        
         // switching numbers to letters
         let move;
         for (let i = 0; i < 20; i++) {

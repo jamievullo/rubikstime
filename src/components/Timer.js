@@ -69,7 +69,7 @@ export default class Timer extends React.Component {
           <center>
 
           <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button>
-          <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStop}>Stop Session</Button>
+          <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button>
           {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
           </center>
         </div>

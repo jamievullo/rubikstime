@@ -197,7 +197,19 @@ export default class Store extends React.Component {
         })
         return (
             <div>
-                <Jumbotron style={{height: '300px'}} className="hero bg-transparent jumbotron-fluid p-0">
+                <Row>
+                    <Col md={{ size: 'auto', offset: 7 }}>                        
+                        <InputGroup style={{marginBottom: '1em'}}>
+                            <Input placeholder="Search Items" onChange={this.handleInputChange}/>
+                            <InputGroupAddon addonType="append">
+                                <Button style={{backgroundColor: '#ffc600', color: '#364182'}}>
+                                Search
+                                </Button>
+                            </InputGroupAddon>
+                        </InputGroup>
+                    </Col>
+                </Row>
+                <Jumbotron style={{height: '250px'}} className="hero bg-transparent jumbotron-fluid p-0">
                     <Container fluid={true}>
                         <Row className="justify-content-center py-0">
                             {/* <Col md={8} sm={12}>
@@ -212,18 +224,7 @@ export default class Store extends React.Component {
                     <Row md='5' className="justify-content-center">
                         <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
                     </Row>                
-                    <Row>
-                        <Col md={{ size: 'auto', offset: 7 }}>                        
-                            <InputGroup style={{marginBottom: '1em'}}>
-                                <Input placeholder="Search Item" onChange={this.handleInputChange}/>
-                                <InputGroupAddon addonType="append">
-                                    <Button style={{backgroundColor: '#ffc600', color: '#364182'}}>
-                                    Search
-                                    </Button>
-                                </InputGroupAddon>
-                            </InputGroup>
-                        </Col>
-                    </Row>
+                    
                     <Container fluid>
                         <Row>
                             {cubeCards}
