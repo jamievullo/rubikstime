@@ -58,7 +58,6 @@ code {
   }
 }
 
-
 .card-image {
   height: 260px;
   object-fit: cover;
@@ -69,6 +68,10 @@ code {
 }
 
 #lifetime-stats {
+  font-style: oblique;
+}
+
+#wca-events {
   font-style: oblique;
 }
 

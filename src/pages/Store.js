@@ -16,6 +16,10 @@ import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
 export default class Store extends React.Component {
 
+    //schema for cubeCard in database
+    //active storage for image/s
+    //image, name, brand, size if applicable, description, price
+
     state = {
         inputValue: '',
         items: [
@@ -209,7 +213,7 @@ export default class Store extends React.Component {
                         </InputGroup>
                     </Col>
                 </Row>
-                <Jumbotron style={{height: '250px'}} className="hero bg-transparent jumbotron-fluid p-0">
+                <Jumbotron style={{height: '200px'}} className="hero bg-transparent jumbotron-fluid p-0">
                     <Container fluid={true}>
                         <Row className="justify-content-center py-0">
                             {/* <Col md={8} sm={12}>
@@ -223,8 +227,7 @@ export default class Store extends React.Component {
                 </Jumbotron>
                     <Row md='5' className="justify-content-center">
                         <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
-                    </Row>                
-                    
+                    </Row>                                    
                     <Container fluid>
                         <Row>
                             {cubeCards}

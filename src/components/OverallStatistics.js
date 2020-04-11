@@ -17,8 +17,8 @@ class OverallStatistics extends React.Component {
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center'}}>Lifetime Stats (cube)</CardTitle>
-                        <div id='lifetime-stats'>
+                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Lifetime Stats (cube)</strong></CardTitle>
+                        <div id='lifetime-stats' style={{color: '#364182'}}>
                             <CardSubtitle>Personal Best (cube) -</CardSubtitle>
                             <CardSubtitle>Lifetime Solves (cube) -</CardSubtitle>
                             <CardSubtitle>Lifetime Average (cube) -</CardSubtitle>

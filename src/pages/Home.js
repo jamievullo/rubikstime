@@ -6,7 +6,8 @@ import RecentTimes from '../components/RecentTimes'
 import CubeSelector from '../components/CubeSelector'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import { Col } from 'react-bootstrap'
+import Col from 'react-bootstrap/Col'
+import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 
 class Home extends React.Component {
     render() {
@@ -25,6 +26,7 @@ class Home extends React.Component {
                     <Row className="justify-content-center">
                         <Col md='4'><RecentTimes /></Col>
                         <Col md='4'><OverallStatistics /></Col>
+                        <Col md='4'><UpcomingWCAEvents /></Col>
                     </Row>
                 </Container> 
                 <div style={{height: '3em'}}></div>              

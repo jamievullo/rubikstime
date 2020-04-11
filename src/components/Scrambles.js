@@ -1,7 +1,6 @@
 import React from 'react'
 
 class Scrambles extends React.Component {
-
     //need to call this function when timer stops after starting and when the app first runs
     makeScramble() {
         let options = ["F", "F2", "F'", "R", "R2", "R'", "U", "U2", "U'", "B", "B2", "B'", "L", "L2", "L'", "D", "D2", "D'"]
@@ -71,7 +70,7 @@ class Scrambles extends React.Component {
 
     render() {
         return (
-            <div style={{display: 'block', fontSize: '1.5em', textAlign: 'center'}}>
+            <div style={{display: 'block', fontSize: '1.5em', textAlign: 'center', color: '#364182'}}>
                 F, F2, F', R, R2, R', U, U2, U', B, B2, B', L, L2, L', D, D2, D', B, B2
                 
             </div>
@@ -80,4 +79,3 @@ class Scrambles extends React.Component {
 }
 
 export default Scrambles
-

@@ -89,11 +89,13 @@ class RecentTimes extends React.Component {
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center'}}>Recent Times</CardTitle>
-                        <div id='recent-times'>
+                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Recent Times</strong></CardTitle>
+                        <div id='recent-times' style={{color: '#364182'}}>
                         <CardSubtitle>
                             Time 1 = {this.state.time1}   
-                            <Button style={{padding: '0px', marginLeft: '1em', backgroundColor: '#ffc600', color: '#364182'}}>plus 2</Button><Button style={{padding: '0px', marginLeft: '1em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button> 
+                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>plus 2</Button>
+                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button>
+                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete Time</Button>
                         </CardSubtitle>
                         <CardSubtitle>Time 2 = {this.state.time2}</CardSubtitle>
                         <CardSubtitle> Time 3 = {this.state.time3}</CardSubtitle>

@@ -62,7 +62,7 @@ export default class Timer extends React.Component {
     return (
       <div id="stopwatch" style={{marginBottom: '2em'}}>
         
-        <div className='timer'>
+        <div className='timer' style={{color: '#364182'}}>
           { minutes } : { seconds } : { milliseconds }
         </div>
         <div>
