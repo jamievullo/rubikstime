@@ -1,6 +1,14 @@
 import React from 'react'
 
 class Scrambles extends React.Component {
+
+    componentDidMount() {
+        document.addEventListener("keypress", this.resetAlgo)
+    }
+
+    resetAlgo = e => {
+        e.keyCode === 13 && this.forceUpdate()
+    }
     //need to call this function when timer stops after starting and when the app first runs
     makeScramble() {
         let options = ["F", "F2", "F'", "R", "R2", "R'", "U", "U2", "U'", "B", "B2", "B'", "L", "L2", "L'", "D", "D2", "D'"]
@@ -23,7 +31,7 @@ class Scrambles extends React.Component {
                     badScramble = false
                 }
             }
-            console.log(scramble)
+            // console.log(scramble)
         }
         
         // switching numbers to letters
@@ -58,6 +66,7 @@ class Scrambles extends React.Component {
             }
         }
         console.log(scrambleMoves)
+        return scrambleMoves
     }
     
     getRandomInt(max) {
@@ -69,10 +78,13 @@ class Scrambles extends React.Component {
     }
 
     render() {
+        const moves = this.makeScramble().toString()
+        console.log(moves)
+        // console.log(this.makeScramble())
         return (
             <div style={{display: 'block', fontSize: '1.5em', textAlign: 'center', color: '#364182'}}>
-                F, F2, F', R, R2, R', U, U2, U', B, B2, B', L, L2, L', D, D2, D', B, B2
-                
+                {/* F, F2, F', R, R2, R', U, U2, U', B, B2, B', L, L2, L', D, D2, D', B, B2 */}
+                { moves }
             </div>
         )
     }

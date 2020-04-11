@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 
 class Home extends React.Component {
+
     render() {
         return (
             <div>                
