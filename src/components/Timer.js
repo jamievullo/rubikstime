@@ -10,11 +10,11 @@ export default class Timer extends React.Component {
   }
 
   handleSessionStart = e => {
-    document.addEventListener("keypress", this.handleKeyPress)   
+    document.addEventListener("keyup", this.handleKeyPress)   
   }
 
   handleSessionStop = e => {
-    document.removeEventListener("keypress", this.handleKeyPress)
+    document.removeEventListener("keyup", this.handleKeyPress)
   }
 
   handleKeyPress = e => {
