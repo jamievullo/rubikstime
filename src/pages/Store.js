@@ -15,11 +15,9 @@ import CubeCard from '../components/CubeCard'
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
 export default class Store extends React.Component {
-
     //schema for cubeCard in database
     //active storage for image/s
     //image, name, brand, size if applicable, description, price
-
     state = {
         inputValue: '',
         items: [
