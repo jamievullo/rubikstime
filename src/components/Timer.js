@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 export default class Timer extends React.Component {
 
@@ -25,7 +25,7 @@ export default class Timer extends React.Component {
   handleKeyPress = e => {
     // onspacebar will start and stop time & hitting enter/return will reset timer
     if (e.keyCode === 32) {
-      this.state.timerOn ? this.stopTimer() : this.startTimer()
+      this.state.timerOn ? this.resetTimer() : this.startTimer()
     } else if (e.keyCode === 13) {
       this.resetTimer()
     }
@@ -44,17 +44,18 @@ export default class Timer extends React.Component {
     }, 10);
   };
 
-  stopTimer = () => {
-    this.setState({ timerOn: false });
-    clearInterval(this.timer);
-  };
+  // stopTimer = () => {
+  //   this.setState({ timerOn: false });
+  //   clearInterval(this.timer);
+  // };
 
   resetTimer = () => {
     clearInterval(this.timer)
     this.props.timesCollection(this.state.timerTime)
     this.setState({
       timerStart: 0,
-      timerTime: 0
+      timerTime: 0,
+      timerOn: false
     });
   };
 
@@ -71,14 +72,14 @@ export default class Timer extends React.Component {
         <div className='timer' style={{color: '#364182'}}>
           { minutes } : { seconds } : { milliseconds }
         </div>
-        <div>
-          <center>
+        {/* <div> */}
+          {/* <center> */}
 
           {/* <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button> */}
-          <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button>
+          {/* <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button> */}
           {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
-          </center>
-        </div>
+          {/* </center> */}
+        {/* </div> */}
 
       </div>
     )
