@@ -12,19 +12,21 @@ import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 class Home extends React.Component {
 
     state = {
-        times: []
+        totalTimes: [],
+        last5: []
     }
 
     timesCollection = cubeTime => {
         console.log(cubeTime)
-        let times = [cubeTime, ...this.state.times]
-        
-        if (times.length > 5) {
-            times = times.slice(0, 5)
+        let times = [cubeTime, ...this.state.totalTimes]
+        let last5 = [cubeTime, ...this.state.last5]
+        if (last5.length > 5) {
+            last5 = [...last5.slice(0, 5)]
         }
 
         this.setState({
-            times: times
+            totalTimes: times,
+            last5: last5
         })
     }
 

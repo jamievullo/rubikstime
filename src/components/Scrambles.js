@@ -65,7 +65,7 @@ class Scrambles extends React.Component {
                 default:    //default case with no result
             }
         }
-        console.log(scrambleMoves)
+        // console.log(scrambleMoves)
         return scrambleMoves
     }
     
@@ -79,7 +79,7 @@ class Scrambles extends React.Component {
 
     render() {
         const moves = this.makeScramble().toString()
-        console.log(moves)
+        // console.log(moves)
         // console.log(this.makeScramble())
         return (
             <div style={{display: 'block', fontSize: '1.5em', textAlign: 'center', color: '#364182'}}>
