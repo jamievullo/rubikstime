@@ -6,7 +6,8 @@ export default class Timer extends React.Component {
   state = {
     timerOn: false,
     timerStart: 0,
-    timerTime: 0
+    timerTime: 0,
+    primed: false
   }
 
   componentDidMount() {
@@ -29,6 +30,7 @@ export default class Timer extends React.Component {
       this.setState({
         timerTime: 0,
         timerStart: 0,
+        primed: true
         // timerOn: false
       })
     }
@@ -49,7 +51,8 @@ export default class Timer extends React.Component {
     this.setState({
       timerOn: true,
       timerTime: 0,
-      timerStart: Date.now() - 0
+      timerStart: Date.now() - 0,
+      primed: false
     });
     this.timer = setInterval(() => {
       this.setState({
@@ -58,23 +61,19 @@ export default class Timer extends React.Component {
     }, 10);
   };
 
-  // stopTimer = () => {
-  //   this.setState({ timerOn: false });
-  //   clearInterval(this.timer);
-  // };
-
   resetTimer = () => {
     clearInterval(this.timer)
     this.props.timesCollection(this.state.timerTime)
     this.setState({
       // timerStart: 0,
       // timerTime: 0,
-      timerOn: false
+      timerOn: false,
+      primed: false
     });
   };
 
   render() {
-
+    const color = this.state.primed ? 'green' : '#364182'
     const { timerTime } = this.state;
     let milliseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
@@ -83,18 +82,10 @@ export default class Timer extends React.Component {
     return (
       <div id="stopwatch" style={{marginBottom: '2em'}}>
         
-        <div className='timer' style={{color: '#364182'}}>
+        <div className='timer' style={{color: color}}>
           { minutes } : { seconds } : { milliseconds }
         </div>
-        {/* <div> */}
-          {/* <center> */}
-
-          {/* <Button style={{backgroundColor: '#ffc600', color: '#364182'}} onClick={this.handleSessionStart}>Start Session</Button> */}
-          {/* <Button style={{backgroundColor: '#ffc600', color: '#364182', marginLeft: '1em'}} onClick={this.handleSessionStop}>Stop Session</Button> */}
-          {/* <Button onClick = {this.resetTimer}>Reset Timer</Button> */}
-          {/* </center> */}
-        {/* </div> */}
-
+    
       </div>
     )
   }
