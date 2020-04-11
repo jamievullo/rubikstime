@@ -10,6 +10,26 @@ import Col from 'react-bootstrap/Col'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 
 class Home extends React.Component {
+
+    state = {
+        totalTimes: [],
+        last5: []
+    }
+
+    timesCollection = cubeTime => {
+        console.log(cubeTime)
+        let times = [cubeTime, ...this.state.totalTimes]
+        let last5 = [cubeTime, ...this.state.last5]
+        if (last5.length > 5) {
+            last5 = [...last5.slice(0, 5)]
+        }
+
+        this.setState({
+            totalTimes: times,
+            last5: last5
+        })
+    }
+
     render() {
         return (
             <div>                
@@ -18,13 +38,13 @@ class Home extends React.Component {
                         <Col md='6' style={{marginBottom: '2em'}}><CubeSelector /></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='7'><Scrambles /></Col>
+                        <Col md='7'><Scrambles times={this.state.times} /></Col>
                     </Row>                        
                     <Row className="justify-content-center">
-                        <Col md='8'><Timer/></Col>
+                        <Col md='8'><Timer timesCollection={this.timesCollection}/></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='4'><RecentTimes /></Col>
+                        <Col md='4'><RecentTimes last5={this.state.last5}/></Col>
                         <Col md='4'><OverallStatistics /></Col>
                         <Col md='4'><UpcomingWCAEvents /></Col>
                     </Row>

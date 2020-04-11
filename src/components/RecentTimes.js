@@ -6,13 +6,13 @@ import {
     } from 'reactstrap';
 
 class RecentTimes extends React.Component {
-
+    
     state = {
-        time1: '16.36',
-        time2: '14.25',
-        time3: '22.14',
-        time4: '17.93',
-        time5: '18.58',
+        time1: this.props.last5[0] || '',
+        time2: this.props.last5[1] || '',
+        time3: this.props.last5[2] || '',
+        time4: this.props.last5[3] || '',
+        time5: this.props.last5[4] || '',
         averageTimeArray: [], //push cube times here
         averageTime: '',      //for rendering of average time
         middleTimeArray: [],  //gets times after 3 times exist in averageTimeArray
@@ -21,43 +21,76 @@ class RecentTimes extends React.Component {
         worstTime: ''
     }
 
-    worstCubeTime(arr) {
-        arr.sort((a, b) => a - b)
-        let worstOfFive = arr.pop()
-        return worstOfFive
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.setState({
+                time1: this.props.last5[0] || '',
+                time2: this.props.last5[1] || '',
+                time3: this.props.last5[2] || '',
+                time4: this.props.last5[3] || '',
+                time5: this.props.last5[4] || '',
+                worstTime: this.worstCubeTime(this.props.last5),
+                bestTime: this.bestCubeTime(this.props.last5),
+                averageTime: this.averageCubeTime(this.props.last5),
+                midThreeAverage: this.averageMiddleThreeTimes(this.props.last5)
+            })
+        }
+    }
+
+    worstCubeTime(arg) {
+        let arr = arg
+        if (arr.length > 1) {
+            arr.sort((a, b) => a - b)
+            let worstOfFive = arr[arr.length -1]
+            return worstOfFive
+        } else {
+            return arr[0]
+        }
     }
     //takes in average time array, sorts it, and returns first index
     //needs to setState of 'bestTime'
-    bestCubeTime(arr) {
-        arr.sort((a, b) => a - b)
-        let bestOfFive = arr.shift()
-        return bestOfFive
+    bestCubeTime(arg) {
+        let arr = arg
+        if (arr.length > 1) {
+            arr.sort((a, b) => a - b)
+            let bestOfFive = arr[0]
+            return bestOfFive
+        } else {
+            return arr[0]
+        }
     }
 
     //takes in averageTimeArray, adds up all times, divides by array length, returns average
     //needs to setState of 'averageTime'
     //need to call this function somewhere
-    averageCubeTime(arr) {
+    averageCubeTime(arg) {
         // let arr = [this.state.time1, this.state.time2, this.state.time3, this.state.time4, this.state.time5];
-        let sum = arr.reduce((previous, current) => current += previous);
-        let avg = sum / arr.length;
-        this.setState({
-            averageTime: avg
-        })
-        return avg
+        let arr = arg
+        if (arr.length > 1) {
+            let sum = arr.reduce((previous, current) => current += previous);
+            let avg = sum / arr.length;
+            return avg.toFixed(2)
+        } else {
+            return arr[0]
+        }
     }
 
     //takes in averageTimeArray, sorts it, removes first and last index, returns new array
     //need to call this function somewhere
     //needs to detState of 'midThreeAverage'
     //need to set conditional to not run until arr has 3 times in it
-    averageMiddleThreeTimes(arr) {
+    averageMiddleThreeTimes(arg) {
         // let arr = [this.state.time1, this.state.time2, this.state.time3, this.state.time4, this.state.time5];
-        arr.sort((a,b) => a - b)    
-        let newArray = arr.slice(1, -1)
-        // arr.shift()
-        // arr.pop()
-        return newArray
+        let arr = arg
+        if (arr.length > 3) {
+            arr.sort((a,b) => a - b)    
+            let newArray = arr.slice(1, -1)
+            // arr.shift()
+            // arr.pop()
+            return this.averageCubeTime(newArray)
+        } else {
+            return null
+        }
         //need to call averageCubeTime function to get average of three remaining times
     }
 
@@ -95,7 +128,7 @@ class RecentTimes extends React.Component {
                             Time 1 = {this.state.time1}   
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>plus 2</Button>
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button>
-                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete Time</Button>
+                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
                         </CardSubtitle>
                         <CardSubtitle>Time 2 = {this.state.time2}</CardSubtitle>
                         <CardSubtitle> Time 3 = {this.state.time3}</CardSubtitle>
@@ -105,6 +138,7 @@ class RecentTimes extends React.Component {
                         <CardSubtitle>Best: {this.state.bestTime}</CardSubtitle>
                         <CardSubtitle>Worst: {this.state.worstTime}</CardSubtitle>
                         <CardSubtitle>Average: {this.state.averageTime}</CardSubtitle>
+                        <CardSubtitle>Average 3: {this.state.midThreeAverage}</CardSubtitle>
                         </div>
                     </CardBody>
                 </Card>
