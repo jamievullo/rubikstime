@@ -17,9 +17,15 @@ class RecentTimes extends React.Component {
         averageTime: '',      //for rendering of average time
         middleTimeArray: [],  //gets times after 3 times exist in averageTimeArray
         midThreeAverage: '',  //for rendering of average of 3 middle times
-        bestTime: ''          //for rendering best time
+        bestTime: '',         //for rendering best time
+        worstTime: ''
     }
 
+    worstCubeTime(arr) {
+        arr.sort((a, b) => a - b)
+        let worstOfFive = arr.pop()
+        return worstOfFive
+    }
     //takes in average time array, sorts it, and returns first index
     //needs to setState of 'bestTime'
     bestCubeTime(arr) {
@@ -94,8 +100,8 @@ class RecentTimes extends React.Component {
                         <CardSubtitle>Time 4 = {this.state.time4}</CardSubtitle>
                         <CardSubtitle>Time 5 = {this.state.time5}</CardSubtitle>
                         <br />
-                        <CardSubtitle>Best: </CardSubtitle>
-                        <CardSubtitle>Worst: </CardSubtitle>
+                        <CardSubtitle>Best: {this.state.bestTime}</CardSubtitle>
+                        <CardSubtitle>Worst: {this.state.worstTime}</CardSubtitle>
                         <CardSubtitle>Average: {this.state.averageTime}</CardSubtitle>
                         </div>
                     </CardBody>
