@@ -25,7 +25,9 @@ export default class Timer extends React.Component {
   handleKeyPress = e => {
     // onspacebar will start and stop time & hitting enter/return will reset timer
     if (e.keyCode === 32) {
+      
       this.state.timerOn ? this.resetTimer() : this.startTimer()
+      
     } else if (e.keyCode === 13) {
       this.resetTimer()
     }
@@ -34,8 +36,8 @@ export default class Timer extends React.Component {
   startTimer = () => {
     this.setState({
       timerOn: true,
-      timerTime: this.state.timerTime,
-      timerStart: Date.now() - this.state.timerTime
+      timerTime: 0,
+      timerStart: Date.now() - 0
     });
     this.timer = setInterval(() => {
       this.setState({
@@ -53,8 +55,8 @@ export default class Timer extends React.Component {
     clearInterval(this.timer)
     this.props.timesCollection(this.state.timerTime)
     this.setState({
-      timerStart: 0,
-      timerTime: 0,
+      // timerStart: 0,
+      // timerTime: 0,
       timerOn: false
     });
   };
