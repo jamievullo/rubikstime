@@ -11,6 +11,23 @@ import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 
 class Home extends React.Component {
 
+    state = {
+        times: []
+    }
+
+    timesCollection = cubeTime => {
+        console.log(cubeTime)
+        let times = [cubeTime, ...this.state.times]
+        
+        if (times.length > 5) {
+            times = times.slice(0, 5)
+        }
+
+        this.setState({
+            times: times
+        })
+    }
+
     render() {
         return (
             <div>                
@@ -19,10 +36,10 @@ class Home extends React.Component {
                         <Col md='6' style={{marginBottom: '2em'}}><CubeSelector /></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='7'><Scrambles /></Col>
+                        <Col md='7'><Scrambles times={this.state.times} /></Col>
                     </Row>                        
                     <Row className="justify-content-center">
-                        <Col md='8'><Timer/></Col>
+                        <Col md='8'><Timer timesCollection={this.timesCollection}/></Col>
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='4'><RecentTimes /></Col>

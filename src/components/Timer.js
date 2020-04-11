@@ -51,6 +51,7 @@ export default class Timer extends React.Component {
 
   resetTimer = () => {
     clearInterval(this.timer)
+    this.props.timesCollection(this.state.timerTime)
     this.setState({
       timerStart: 0,
       timerTime: 0
