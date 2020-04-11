@@ -16,7 +16,9 @@ class RTNavbar extends React.Component {
             <Container className="p-0" fluid={true} >
                 <Navbar className="navbar" expand='md'>
                     <Navbar.Brand>
-                    <img src={brand} style={{height: "50px", width: "300px"}} alt=""/>
+                    <Link to="/">
+                        <img src={brand} style={{height: "50px", width: "300px"}} alt=""/>
+                    </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                         <Navbar.Collapse id="navbar-toggle">
