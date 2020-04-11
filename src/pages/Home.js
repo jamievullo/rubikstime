@@ -17,7 +17,7 @@ class Home extends React.Component {
                         <Col md='6' style={{marginBottom: '2em'}}><CubeSelector /></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='5'><Scrambles /></Col>
+                        <Col md='7'><Scrambles /></Col>
                     </Row>                        
                     <Row className="justify-content-center">
                         <Col md='8'><Timer/></Col>

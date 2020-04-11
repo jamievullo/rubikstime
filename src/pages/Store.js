@@ -25,43 +25,43 @@ export default class Store extends React.Component {
                 name: "V251",
                 brand: "Gan",
                 size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
-                price: "$23.99"
+                description: "Holds US record",
+                price: "$26.99"
             },
             {
                 id: 1,
                 image: three,
-                name: "V251",
+                name: "354m",
                 brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
-                price: "$23.99"
+                size: "3 x 3",
+                description: "Most popular cube",
+                price: "$53.99"
             },
             {
                 id: 2,
                 image: four,
                 name: "V251",
-                brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
-                price: "$23.99"
+                brand: "Moyou",
+                size: "4 x 4",
+                description: "Decrease your times",
+                price: "$39.99"
             },
             {
                 id: 3,
                 image: five,
                 name: "V251",
-                brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
-                price: "$23.99"
+                brand: "Moyou",
+                size: "5 x 5",
+                description: "Buttery turns",
+                price: "$43.99"
             },
             {
                 id: 4,
                 image: six,
                 name: "V251",
-                brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                brand: "Youshin",
+                size: "6 x 6",
+                description: "World record holding cube",
                 price: "$23.99"
             },
             {
@@ -69,61 +69,61 @@ export default class Store extends React.Component {
                 image: seven,
                 name: "V251",
                 brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
-                price: "$23.99"
+                size: "7 x 7",
+                description: "Top of the class",
+                price: "$33.99"
             },
             {
                 id: 6,
                 image: mega,
-                name: "V251",
-                brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                name: "Megaminx",
+                brand: "Youshin",
+                size: "mega",
+                description: "nice -n- crunchy",
                 price: "$23.99"
             },
             {
                 id: 7,
                 image: pyra,
-                name: "V251",
+                name: "Pyraminx",
                 brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                size: "pyra",
+                description: "Silky smooth",
                 price: "$23.99"
             },
             {
                 id: 8,
                 image: two,
-                name: "V251",
+                name: "Two by Two",
                 brand: "Gan",
                 size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                description: "For smaller hands",
                 price: "$23.99"
             },
             {
                 id: 9,
                 image: three,
-                name: "V251",
+                name: "Three by Three",
                 brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                size: "3 x 3",
+                description: "For longer fingers",
                 price: "$23.99"
             },
             {
                 id: 10,
                 image: four,
-                name: "V251",
-                brand: "Gan",
-                size: "2 x 2",
-                description: "Awesome action, will lower your times!!",
+                name: "Four by Four",
+                brand: "Moyou",
+                size: "4 x 4",
+                description: "Change your tensions change your life",
                 price: "$23.99"
             },
             {
                 id: 11,
                 image: five,
-                name: "V251",
+                name: "Five by Five",
                 brand: "Gan",
-                size: "2 x 2",
+                size: "5 x 5",
                 description: "Awesome action, will lower your times!!",
                 price: "$23.99"
             },
@@ -132,7 +132,7 @@ export default class Store extends React.Component {
                 image: six,
                 name: "V251",
                 brand: "Gan",
-                size: "2 x 2",
+                size: "6 x 6",
                 description: "Awesome action, will lower your times!!",
                 price: "$23.99"
             },
@@ -141,7 +141,7 @@ export default class Store extends React.Component {
                 image: seven,
                 name: "V251",
                 brand: "Gan",
-                size: "2 x 2",
+                size: "7 x 7",
                 description: "Awesome action, will lower your times!!",
                 price: "$23.99"
             },
@@ -150,7 +150,7 @@ export default class Store extends React.Component {
                 image: mega,
                 name: "V251",
                 brand: "Gan",
-                size: "2 x 2",
+                size: "mega",
                 description: "Awesome action, will lower your times!!",
                 price: "$23.99"
             },
@@ -178,7 +178,24 @@ export default class Store extends React.Component {
     }
 
     render() {
-        let cubeCards = this.state.items.map(item => {
+
+        const {inputValue} = this.state
+        // const filteredItems = this.state.items.filter(item => {
+        //     return item.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1
+        // })
+
+        let filteredItems = this.state.items.filter((data) =>  {
+            return JSON.stringify(data).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
+        })
+
+        // let myValues = Object.values(this.state.items)
+        // // console.log(myValues)
+        // let filteredItems = myValues.filter(item => {
+        //     console.log(item)
+        //     return item === inputValue
+        // })
+
+        let cubeCards = filteredItems.map(item => {
             return (
                 <Col md='3' key={item.id}>
                     <CubeCard item={item}/>
@@ -206,10 +223,10 @@ export default class Store extends React.Component {
                     <Row>
                         <Col md={{ size: 'auto', offset: 7 }}>                        
                             <InputGroup style={{marginBottom: '1em'}}>
-                                <Input onChange={this.handleInputChange}/>
+                                <Input placeholder="Search Item" onChange={this.handleInputChange}/>
                                 <InputGroupAddon addonType="append">
                                     <Button style={{backgroundColor: '#ffc600', color: '#364182'}}>
-                                    Search Items
+                                    Search
                                     </Button>
                                 </InputGroupAddon>
                             </InputGroup>
