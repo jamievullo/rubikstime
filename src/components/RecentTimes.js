@@ -117,6 +117,16 @@ class RecentTimes extends React.Component {
 
     }
 
+    formatTime = time => {
+        if (time > 0) {
+            let milliseconds = ("0" + (Math.floor(time / 10) % 100)).slice(-2);
+            let seconds = ("0" + (Math.floor(time / 1000) % 60)).slice(-2);
+            let minutes = ("0" + (Math.floor(time / 60000) % 60)).slice(-2);
+        
+            return minutes > 0 ? `${minutes}:${seconds}:${milliseconds}` : `${seconds}:${milliseconds}`
+        }
+    }
+
     render() {
         return (
             <div>
@@ -125,20 +135,20 @@ class RecentTimes extends React.Component {
                         <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Recent Times</strong></CardTitle>
                         <div id='recent-times' style={{color: '#364182'}}>
                         <CardSubtitle>
-                            Time 1 = {this.state.time1}   
+                            Time 1 = <strong>{this.formatTime(this.state.time1)}</strong>   
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>plus 2</Button>
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button>
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
                         </CardSubtitle>
-                        <CardSubtitle>Time 2 = {this.state.time2}</CardSubtitle>
-                        <CardSubtitle> Time 3 = {this.state.time3}</CardSubtitle>
-                        <CardSubtitle>Time 4 = {this.state.time4}</CardSubtitle>
-                        <CardSubtitle>Time 5 = {this.state.time5}</CardSubtitle>
+                        <CardSubtitle>Time 2 = <strong>{this.formatTime(this.state.time2)}</strong></CardSubtitle>
+                        <CardSubtitle> Time 3 = <strong>{this.formatTime(this.state.time3)}</strong></CardSubtitle>
+                        <CardSubtitle>Time 4 = <strong>{this.formatTime(this.state.time4)}</strong></CardSubtitle>
+                        <CardSubtitle>Time 5 = <strong>{this.formatTime(this.state.time5)}</strong></CardSubtitle>
                         <br />
-                        <CardSubtitle>Best: {this.state.bestTime}</CardSubtitle>
-                        <CardSubtitle>Worst: {this.state.worstTime}</CardSubtitle>
-                        <CardSubtitle>Average: {this.state.averageTime}</CardSubtitle>
-                        <CardSubtitle>Average 3: {this.state.midThreeAverage}</CardSubtitle>
+                        <CardSubtitle>Best: <strong>{this.formatTime(this.state.bestTime)}</strong></CardSubtitle>
+                        <CardSubtitle>Worst: <strong>{this.formatTime(this.state.worstTime)}</strong></CardSubtitle>
+                        <CardSubtitle>Average: <strong>{this.formatTime(this.state.averageTime)}</strong></CardSubtitle>
+                        <CardSubtitle>Average 3: <strong>{this.formatTime(this.state.midThreeAverage)}</strong></CardSubtitle>
                         </div>
                     </CardBody>
                 </Card>

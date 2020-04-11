@@ -78,7 +78,7 @@ class Scrambles extends React.Component {
     }
 
     render() {
-        const moves = this.makeScramble().toString()
+        const moves = this.makeScramble().join(", ")
         // console.log(moves)
         // console.log(this.makeScramble())
         return (
