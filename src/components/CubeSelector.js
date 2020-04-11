@@ -34,7 +34,7 @@ class CubeSelector extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{textAlign: 'center'}}>
                 <img id='1' onClick={this.handleCubeClick} src={two} style={{height: "55px", width: "57px"}} alt=""/>
                 <img id='2' src={three} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>
                 <img id='3' src={four} style={{height: "55px", width: "57px", marginRight: '.424em'}} alt=""/>

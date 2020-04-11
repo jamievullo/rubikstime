@@ -113,7 +113,7 @@ export default class Store extends React.Component {
                 id: 10,
                 image: four,
                 name: "Four by Four",
-                brand: "Moyou",
+                brand: "Gan",
                 size: "4 x 4",
                 description: "Change your tensions change your life",
                 price: "$23.99"
@@ -178,22 +178,15 @@ export default class Store extends React.Component {
     }
 
     render() {
+        // const filteredItems = this.state.items.filter(item => {
+            //     return item.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1
+            // })
 
         const {inputValue} = this.state
-        // const filteredItems = this.state.items.filter(item => {
-        //     return item.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1
-        // })
-
+            
         let filteredItems = this.state.items.filter((data) =>  {
             return JSON.stringify(data).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
         })
-
-        // let myValues = Object.values(this.state.items)
-        // // console.log(myValues)
-        // let filteredItems = myValues.filter(item => {
-        //     console.log(item)
-        //     return item === inputValue
-        // })
 
         let cubeCards = filteredItems.map(item => {
             return (
@@ -218,8 +211,7 @@ export default class Store extends React.Component {
                 </Jumbotron>
                     <Row md='5' className="justify-content-center">
                         <Col><center><h3 style={{color: "#364182"}}>The Merch</h3></center></Col>
-                    </Row>
-                
+                    </Row>                
                     <Row>
                         <Col md={{ size: 'auto', offset: 7 }}>                        
                             <InputGroup style={{marginBottom: '1em'}}>
@@ -232,14 +224,11 @@ export default class Store extends React.Component {
                             </InputGroup>
                         </Col>
                     </Row>
-
-
                     <Container fluid>
                         <Row>
                             {cubeCards}
                         </Row>
-                    </Container>
-                    
+                    </Container>                    
                     <div style={{marginBottom: '10em'}}></div>
             </div>
         )

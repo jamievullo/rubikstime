@@ -5,14 +5,22 @@ import {
     } from 'reactstrap';
 
 class OverallStatistics extends React.Component {
+
+    //when logged in a users best times and overall averages will be called from 
+    //the database to populate this component for rendering.
+    fetchTimesFromDatabase() {
+
+    }
+
     render() {
         return (
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center'}}>Lifetime Stats</CardTitle>
+                        <CardTitle style={{textAlign: 'center'}}>Lifetime Stats (cube)</CardTitle>
                         <div id='lifetime-stats'>
                             <CardSubtitle>Personal Best (cube) -</CardSubtitle>
+                            <CardSubtitle>Lifetime Solves (cube) -</CardSubtitle>
                             <CardSubtitle>Lifetime Average (cube) -</CardSubtitle>
                             <CardSubtitle>Best Session Time -</CardSubtitle>
                             <CardSubtitle>Overall Session Average (cube) -</CardSubtitle>

@@ -69,7 +69,7 @@ class Scrambles extends React.Component {
 
     render() {
         return (
-            <div style={{fontSize: '1.5em'}}>
+            <div style={{display: 'block', fontSize: '1.5em', textAlign: 'center'}}>
                 F, F2, F', R, R2, R', U, U2, U', B, B2, B', L, L2, L', D, D2, D', B, B2
                 
             </div>
