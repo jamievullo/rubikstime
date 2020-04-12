@@ -18,7 +18,7 @@ code {
   bottom: 0;
   width: 100%;
   background-color: #325bfb;
-  color: white;
+  color: #ffc600;
 }
 
 .dropdown-toggle::after {
@@ -83,4 +83,8 @@ code {
   background-position: center;
   /* width: 100%; */
   object-fit: cover;
+}
+
+.cube-type:hover {
+  transform: scale(1.3);
 }

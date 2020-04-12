@@ -1,13 +1,13 @@
 import React from 'react'
-import Timer from '../components/Timer'
-import Scrambles from '../components/Scrambles'
-import OverallStatistics from '../components/OverallStatistics'
-import RecentTimes from '../components/RecentTimes'
 import CubeSelector from '../components/CubeSelector'
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col'
+import Scrambles from '../components/Scrambles'
+import Timer from '../components/Timer'
+import RecentTimes from '../components/RecentTimes'
+import OverallStatistics from '../components/OverallStatistics'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'
 
 class Home extends React.Component {
 
@@ -35,7 +35,7 @@ class Home extends React.Component {
             <div>                
                 <Container fluid={true} style={{paddingBottom: "4em"}}>
                     <Row className="justify-content-center"> 
-                        <Col md='7' style={{marginBottom: '2em'}}><CubeSelector /></Col>
+                        <CubeSelector />
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='7'><Scrambles times={this.state.times} /></Col>
