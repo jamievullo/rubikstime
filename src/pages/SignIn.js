@@ -1,12 +1,16 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Alert from 'react-bootstrap/Alert'
+import axios from 'axios'
 
 class SignIn extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        errors: '',
+        success: false
     }
 
     handleChange = (e) => {
@@ -17,7 +21,41 @@ class SignIn extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        const {username, password} = this.state
+        let user = {
+            username: username,
+            password: password
+            }
+        
+        axios.post('http://localhost:3000/login', {user})
+        .then(response => {
+        if (response.data.logged_in) {
+            this.props.handleLogin(response.data)
+            this.setState({
+                success: true,
+                redirect: true
+            })
+        } else {
+            this.setState({
+                errors: response.data.errors,
+                username: "",
+                password: ""
+                })
+            }
+        })
+        .catch(error => console.log('api errors:', error))
+    };
+
+    //rendering of error messages in response from server controller actions
+    errorMessages = () => {
+        if(this.state.errors) {
+            return this.state.errors.map((err, index) => (
+                <Alert style={{color: 'red'}} key={index}>
+                    {err}
+                </Alert>
+                )
+            )
+        }
     }
 
     render() {

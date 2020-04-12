@@ -1,12 +1,16 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Alert from 'react-bootstrap/Alert'
+import axios from 'axios'
 
 class Registration extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        errors: '',
+        success: false
     }
 
     handleChange = (e) => {
@@ -17,7 +21,41 @@ class Registration extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        const {username, password} = this.state
+        let user = {
+            username: username,
+            password: password
+            }
+
+        axios.post('http://localhost:3000/users', {user})
+        .then(response => {
+            if (response.data.status === 'created') {
+                // callback passed in thru props logging in user after signup
+            this.props.handleLogin(response.data)
+            //sets response.data.user to userData variable
+            const userData = response.data.user
+            //calls dispatch method 'add new user' and passes user data payload
+            this.props.dispatch({ type: 'ADD_NEW_USER', payload: userData })
+            this.redirect()
+            } else {
+            this.setState({
+                errors: response.data.errors
+                })
+            }
+        })
+        .catch(error => console.log('api errors:', error))
+    };
+
+
+    errorMessages = () => {
+        if(this.state.errors) {
+            return this.state.errors.map((err, index) => (
+                <Alert style={{color: 'red'}} key={index}>
+                    {err}
+                </Alert>
+                )
+            )
+        }
     }
 
     render() {
