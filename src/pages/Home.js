@@ -45,8 +45,8 @@ class Home extends React.Component {
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='4'><RecentTimes last5={this.state.last5}/></Col>
-                        <Col md='4'><OverallStatistics /></Col>
-                        <Col md='4'><UpcomingWCAEvents /></Col>
+                        <Col md='3'><OverallStatistics /></Col>
+                        <Col md='5'><UpcomingWCAEvents /></Col>
                     </Row>
                 </Container> 
                 <div style={{height: '3em'}}></div>              

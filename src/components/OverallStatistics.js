@@ -16,15 +16,15 @@ class OverallStatistics extends React.Component {
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Lifetime Stats (cube)</strong></CardTitle>
+                    <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Lifetime Stats-(cube)</strong></CardTitle>
                         <div id='lifetime-stats' style={{color: '#364182'}}>
-                            <CardSubtitle>Personal Best (cube) -</CardSubtitle>
-                            <CardSubtitle>Lifetime Solves (cube) -</CardSubtitle>
-                            <CardSubtitle>Lifetime Average (cube) -</CardSubtitle>
+                            <CardSubtitle>Personal Best -</CardSubtitle>
+                            <CardSubtitle>Lifetime Solves -</CardSubtitle>
+                            <CardSubtitle>Lifetime Avg -</CardSubtitle>
                             <CardSubtitle>Best Session Time -</CardSubtitle>
-                            <CardSubtitle>Overall Session Average (cube) -</CardSubtitle>
-                            <CardSubtitle>Best Session Average of 5 (cube) -</CardSubtitle>
-                            <CardSubtitle>Best lifetime Average of 5 (cube) -</CardSubtitle>
+                            <CardSubtitle>Overall Session Avg -</CardSubtitle>
+                            <CardSubtitle>Best Session Avg 5 -</CardSubtitle>
+                            <CardSubtitle>Best lifetime Avg 5 -</CardSubtitle>
                         </div>
                     </CardBody>
                 </Card>
