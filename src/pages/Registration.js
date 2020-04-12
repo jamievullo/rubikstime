@@ -34,9 +34,6 @@ class Registration extends React.Component {
             this.props.handleLogin(response.data)
             //sets response.data.user to userData variable
             const userData = response.data.user
-            //calls dispatch method 'add new user' and passes user data payload
-            this.props.dispatch({ type: 'ADD_NEW_USER', payload: userData })
-            this.redirect()
             } else {
             this.setState({
                 errors: response.data.errors

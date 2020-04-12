@@ -32,8 +32,7 @@ class SignIn extends React.Component {
         if (response.data.logged_in) {
             this.props.handleLogin(response.data)
             this.setState({
-                success: true,
-                redirect: true
+                success: true
             })
         } else {
             this.setState({
