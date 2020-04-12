@@ -1,5 +1,4 @@
 import React from 'react'
-// import Button from 'react-bootstrap/Button'
 
 export default class Timer extends React.Component {
 
@@ -25,19 +24,16 @@ export default class Timer extends React.Component {
   }
 
   zeroOutTimer = e => {
-    // this.stopTimer()
     if (this.state.timerOn === false ) {
       this.setState({
         timerTime: 0,
         timerStart: 0,
         primed: true
-        // timerOn: false
       })
     }
   }
 
   handleKeyPress = e => {
-    // onspacebar will start and stop time & hitting enter/return will reset timer
     if (e.keyCode === 32) {
       
       this.state.timerOn ? this.resetTimer() : this.startTimer()
@@ -65,8 +61,6 @@ export default class Timer extends React.Component {
     clearInterval(this.timer)
     this.props.timesCollection(this.state.timerTime)
     this.setState({
-      // timerStart: 0,
-      // timerTime: 0,
       timerOn: false,
       primed: false
     });
@@ -81,11 +75,9 @@ export default class Timer extends React.Component {
 
     return (
       <div id="stopwatch" style={{marginBottom: '2em'}}>
-        
         <div className='timer' style={{color: color}}>
           { minutes } : { seconds } : { milliseconds }
-        </div>
-    
+        </div>    
       </div>
     )
   }

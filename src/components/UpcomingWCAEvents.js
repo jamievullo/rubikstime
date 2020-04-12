@@ -1,16 +1,26 @@
 import React from 'react'
+import ScrapeDisplay from '../components/ScrapeDisplay' 
 import {
     Card, CardBody,
     CardTitle, CardSubtitle
     } from 'reactstrap';
 
 class UpcomingWCAEvents extends React.Component {
-    
-    //site scrubs old dates, so no need for any logic for processing old dates
-    //https://www.worldcubeassociation.org/competitions?utf8=%E2%9C%93&region=_North+America&search=&state=present&year=all+years&from_date=&to_date=&delegate=&display=list
-    //scrape url for upcoming north american events
-    fetchEventsFromDatabase() {
 
+    state = {
+        events: [],
+        isLoading: true
+    }
+
+    componentDidMount = () => {
+        fetch("http://localhost:3000/wca_events")
+        .then(response => response.json())
+        // .then(data => console.log(data.results))
+        .then(data => this.setState({
+            // console.log(data.results)
+            events: data.results,
+            isLoading: false
+        }))
     }
 
     render() {
@@ -18,18 +28,19 @@ class UpcomingWCAEvents extends React.Component {
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Upcoming WCA Events</strong></CardTitle>
+                    <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Upcoming WCA Events</strong></CardTitle>
                         <div id='wca-events' style={{color: '#364182'}}>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
-                            <CardSubtitle>Date - Name of Event - Location of Event</CardSubtitle>
+                            <CardSubtitle>{this.state.events.map((event, i) => <ScrapeDisplay key={i} event={event} />)}</CardSubtitle>
+                            {/* <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle>
+                            <CardSubtitle>Date - Name of Event - Location of Event(scraped stuff)</CardSubtitle> */}
                         </div>
                     </CardBody>
                 </Card>

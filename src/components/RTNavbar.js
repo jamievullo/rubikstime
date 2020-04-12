@@ -32,14 +32,12 @@ class RTNavbar extends React.Component {
                                     <span className="mr-auto" style={{color: "#325bfb"}}>Sign In</span>
                                         } id="basic-dropdown">
                                         <SignIn />
-                                </NavDropdown>
-                                
+                                </NavDropdown>                                
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
                             </Nav>
                         </Navbar.Collapse>  
-                </Navbar> 
-                
+                </Navbar>                 
             </Container>           
         )
     }

@@ -76,6 +76,10 @@ code {
   font-style: oblique;
 }
 
+.scrape {
+  font-size: .75em;
+}
+
 .hero {
   background-image: url('../src/assets/RubiksStoreBG.png');
   /* background-attachment: fixed ; */

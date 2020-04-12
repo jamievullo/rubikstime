@@ -90,7 +90,6 @@ class CubeSelector extends React.Component {
     }
 
     render() {
-
         let cubeType = this.state.cubes.map(cube => {
             return (
                 <CubeType handleCubeClick={this.handleCubeClick} cube={cube} key={cube.id} />

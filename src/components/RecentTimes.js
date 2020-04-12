@@ -59,7 +59,6 @@ class RecentTimes extends React.Component {
             return arr[0]
         }
     }
-
     //takes in averageTimeArray, adds up all times, divides by array length, returns average
     //needs to setState of 'averageTime'
     //need to call this function somewhere
@@ -74,7 +73,6 @@ class RecentTimes extends React.Component {
             return arr[0]
         }
     }
-
     //takes in averageTimeArray, sorts it, removes first and last index, returns new array
     //need to call this function somewhere
     //needs to detState of 'midThreeAverage'
@@ -93,7 +91,6 @@ class RecentTimes extends React.Component {
         }
         //need to call averageCubeTime function to get average of three remaining times
     }
-
     //need to display clickable button to add 2 seconds to last recorded time only
     //needs onClick attribute to add 2 seconds to time if necessary 
     //needs to setState of time1 
@@ -110,7 +107,6 @@ class RecentTimes extends React.Component {
     didNotFinish() {
 
     }
-
     //when logged in a users best times and overall averages will be called from 
     //the database to pop 
     pushTimesToDatabase() {
