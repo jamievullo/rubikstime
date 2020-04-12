@@ -27,14 +27,15 @@ code {
 
 .timer {
   width: 100%;
-  font-size: 8em;
+  font-size: 7em;
+  /* font-family: monospace; */
   text-align: center;
   margin: 0px auto;
 }
 
 @media screen and (max-width: 1125px) {
   .timer {
-      font-size: 7em;
+      font-size: 6em;
   }
 }
 @media screen and (max-width: 1000px) {

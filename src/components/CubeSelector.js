@@ -1,5 +1,5 @@
 import React from 'react'
-import two from '../assets/2x2Cube.jpg'
+import two from '../assets/2x2Cube.png'
 import three from '../assets/3x3Cube.png'
 import four from '../assets/4x4Cube.png'
 import five from '../assets/5x5Cube.png'
