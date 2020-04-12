@@ -132,7 +132,7 @@ class RecentTimes extends React.Component {
                         <div id='recent-times' style={{color: '#364182'}}>
                         <CardSubtitle>
                             Time 1 = <strong>{this.formatTime(this.state.time1)}</strong>   
-                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>plus 2</Button>
+                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Plus 2</Button>
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button>
                             <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
                         </CardSubtitle>

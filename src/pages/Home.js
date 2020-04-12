@@ -37,10 +37,10 @@ class Home extends React.Component {
                     <Row className="justify-content-center"> 
                         <CubeSelector />
                     </Row>
-                    <Row className="justify-content-center">
+                    <Row className="justify-content-center" style={{paddingBottom: "1.5em"}}>
                         <Col md='7'><Scrambles times={this.state.times} /></Col>
                     </Row>                        
-                    <Row className="justify-content-center">
+                    <Row className="justify-content-center" style={{paddingBottom: "1.5em"}}>
                         <Col md='8'><Timer timesCollection={this.timesCollection}/></Col>
                     </Row>
                     <Row className="justify-content-center">
