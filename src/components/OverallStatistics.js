@@ -14,7 +14,7 @@ class OverallStatistics extends React.Component {
     render() {
         return (
             <div>
-                <Card>
+                <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
                     <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Lifetime Stats-(cube)</strong></CardTitle>
                         <div id='lifetime-stats' style={{color: '#364182'}}>

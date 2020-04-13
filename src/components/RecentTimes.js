@@ -13,9 +13,8 @@ class RecentTimes extends React.Component {
         time3: this.props.last5[2] || '',
         time4: this.props.last5[3] || '',
         time5: this.props.last5[4] || '',
-        averageTimeArray: [], //push cube times here
+        // last5: []
         averageTime: '',      //for rendering of average time
-        middleTimeArray: [],  //gets times after 3 times exist in averageTimeArray
         midThreeAverage: '',  //for rendering of average of 3 middle times
         bestTime: '',         //for rendering best time
         worstTime: ''
@@ -29,6 +28,7 @@ class RecentTimes extends React.Component {
                 time3: this.props.last5[2] || '',
                 time4: this.props.last5[3] || '',
                 time5: this.props.last5[4] || '',
+                // last5: this.props.last5 || [],
                 worstTime: this.worstCubeTime(this.props.last5),
                 bestTime: this.bestCubeTime(this.props.last5),
                 averageTime: this.averageCubeTime(this.props.last5),
@@ -95,12 +95,11 @@ class RecentTimes extends React.Component {
     //needs onClick attribute to add 2 seconds to time if necessary 
     //needs to setState of time1 
     //also needs a disable after click
-    plusTwo() {
-        this.setState({
-            time1: this.state.time1 + 2
-        })
-        return null
-    }
+    // plusTwo = () => {
+    //     return this.setState({
+    //         time1: this.state.time1 + 2000
+    //     })
+    // }
     //needs onClick to add DNF time to AverageTimeArray
     //still needs to be counted. If more than 3 DNF's, no average of three can be recorded
     //maybe a count of DNF's and a default value for it to be averaged in to averageTime?
@@ -124,17 +123,23 @@ class RecentTimes extends React.Component {
     }
 
     render() {
+        // let last5Array = [this.state.time1, this.state.time2, this.state.time3, this.state.time4, this.state.time5]
+        // let worstTime = this.worstCubeTime(last5Array)
+        // let bestTime = this.bestCubeTime(last5Array)
+        // let averageTime = this.averageCubeTime(last5Array)
+        // let midThreeAverage = this.averageMiddleThreeTimes(last5Array)
+
         return (
             <div>
-                <Card>
+                <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
                         <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Recent Times</strong></CardTitle>
                         <div id='recent-times' style={{color: '#364182'}}>
                         <CardSubtitle>
                             Time 1 = <strong>{this.formatTime(this.state.time1)}</strong>   
-                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Plus 2</Button>
-                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button>
-                            <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
+                            {/* <Button onClick={this.plusTwo} style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Plus 2</Button> */}
+                            {/* <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button> */}
+                            <Button style={{padding: '0px', marginLeft: '1.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
                         </CardSubtitle>
                         <CardSubtitle>Time 2 = <strong>{this.formatTime(this.state.time2)}</strong></CardSubtitle>
                         <CardSubtitle> Time 3 = <strong>{this.formatTime(this.state.time3)}</strong></CardSubtitle>

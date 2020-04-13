@@ -26,7 +26,7 @@ class UpcomingWCAEvents extends React.Component {
     render() {
         return (
             <div>
-                <Card>
+                <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
                     <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong><a href='https://www.worldcubeassociation.org/competitions?utf8=%E2%9C%93&region=_North+America&search=&state=present&year=all+years&from_date=&to_date=&delegate=&display=list' style={{color: '#364182'}} target="_blank" rel="noopener noreferrer">Upcoming WCA Events</a></strong></CardTitle>
                         <div id='wca-events' style={{color: '#364182'}}>

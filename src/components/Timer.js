@@ -37,7 +37,6 @@ export default class Timer extends React.Component {
     if (e.keyCode === 32) {
       
       this.state.timerOn ? this.resetTimer() : this.startTimer()
-      
     } else if (e.keyCode === 13) {
       this.resetTimer()
     }
