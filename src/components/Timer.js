@@ -10,21 +10,32 @@ export default class Timer extends React.Component {
   }
 
   componentDidMount() {
+    document.querySelector('.navbar').addEventListener("click", this.handleSessionStop)
     document.addEventListener("keypress", this.handleSessionStart)
+    document.querySelector('#stopwatch').addEventListener("click", this.handleSessionStart)
   }
+
+  // componentWillUnmount() {
+  //   document.getElementById('home-container').removeEventListener("mouseenter", this.handleSessionStart)
+  // }
 
   handleSessionStart = e => {
     e.preventDefault()
-    e.keyCode === 32 && document.addEventListener("keyup", this.handleKeyPress)
-    e.keyCode === 32 && document.addEventListener("keypress", this.zeroOutTimer)   
+    // console.log("session start")
+    document.addEventListener("keyup", this.handleKeyPress)
+    document.addEventListener("keypress", this.zeroOutTimer)   
   }
 
   handleSessionStop = e => {
+    // console.log("session stop")
+    document.removeEventListener("keypress", this.handleSessionStart)
     document.removeEventListener("keyup", this.handleKeyPress)
+    document.removeEventListener("keypress", this.zeroOutTimer)
   }
 
   zeroOutTimer = e => {
-    if (this.state.timerOn === false ) {
+    e.preventDefault()
+    if (this.state.timerOn === false && e.keyCode === 32) {
       this.setState({
         timerTime: 0,
         timerStart: 0,
@@ -34,6 +45,7 @@ export default class Timer extends React.Component {
   }
 
   handleKeyPress = e => {
+    e.preventDefault()
     if (e.keyCode === 32) {
       
       this.state.timerOn ? this.resetTimer() : this.startTimer()

@@ -92,7 +92,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>                
+            <div id="home-container">                
                 <Container fluid={true} style={{paddingBottom: "4em"}}>
                     <Row className="justify-content-center"> 
                         <CubeSelector />
