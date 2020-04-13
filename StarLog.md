@@ -5,3 +5,9 @@
 captains log star-date 04/08/2020
 
 - Kirk: ok so centiseconds isn't a thing. Changed it. Added images for cube selection. Those pesky CSS borg are playing with my mind somehow. Possibly telepathically. Is there a max on media queries for one element? We may never know. 
+
+4/13/20:
+
+- dont return password when logging in from backend
+- figure out with credentials and cors mess
+- custom routes

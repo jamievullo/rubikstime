@@ -30,11 +30,13 @@ class Registration extends React.Component {
         axios.post('http://localhost:3000/users', {user})
         .then(response => {
             if (response.data.status === 'created') {
+                console.log("user created")
                 // callback passed in thru props logging in user after signup
             this.props.handleLogin(response.data)
             //sets response.data.user to userData variable
             // const userData = response.data.user //??
             } else {
+                console.log("oops")
             this.setState({
                 errors: response.data.errors
                 })

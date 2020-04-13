@@ -17,7 +17,7 @@ import Col from 'react-bootstrap/Col'
 class CubeSelector extends React.Component {
 
     state = {
-        currentCube: '',
+        // currentCube: '',
         cubes: [
             {
                 id: 1,
@@ -84,9 +84,10 @@ class CubeSelector extends React.Component {
 
     handleCubeClick = (e) => {
         console.log(e.target.name)
-        this.setState({
-            currentCube: e.target.name
-        })
+        this.props.handleCubeSelection(e.target.name)
+        // this.setState({
+        //     currentCube: e.target.name
+        // })
     }
 
     render() {
