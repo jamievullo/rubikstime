@@ -22,37 +22,6 @@ class RTNavbar extends React.Component {
         this.loginStatus()
     }
 
-    //taking in login data recieved from server and setting state
-    // handleLogin = (data) => {
-    //     console.log(data.user.username)
-        
-    //     if (data.user.username) {
-    //         const user = data.user.username
-    //         this.dataOrigin(user)
-    //     // } else if (data.data.username) {
-    //     // const user = data.data.username
-    //     // this.dataOrigin(user)
-    //     }
-    // }
-
-    // //helper function to overcome not setting state 2x in same function and to
-    // //also pass into conditional to check if the origin of the data is from the 
-    // //server(to check for login from session) or from user input.   
-    // dataOrigin = (user) => {
-    //     this.setState({
-    //         isLoggedIn: true,
-    //         user: user
-    //     })
-    // }
-
-    //on logout clears user state obj and toggles isLoggedIn obj to false
-    handleLogout = () => {
-        this.setState({
-        isLoggedIn: false,
-        user: {}
-        })
-    }
-
     loginStatus = () => {
         //ajax call to sessions custom route
         axios.get('http://localhost:3000/logged_in')
@@ -72,7 +41,7 @@ class RTNavbar extends React.Component {
     handleLogoutClick = () => {
         axios.delete('http://localhost:3000/logout')
         .then(response => {
-        this.handleLogout()
+        this.props.handleLogout()
         })
         .catch(error => console.log(error))
     }
@@ -89,6 +58,10 @@ class RTNavbar extends React.Component {
                     <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                         <Navbar.Collapse id="navbar-toggle">
                             <Nav className="ml-auto">
+                                {this.props.isLoggedIn ?
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} onClick={this.handleLogoutClick} to='/'>Logout</Link>
+                                : 
+                                <>
                                 <NavDropdown className="account" style={{margin: 'inherit'}} title={
                                     <span className="mr-auto" style={{color: "#325bfb"}}>Registration</span>
                                         } id="basic-dropdown">
@@ -98,7 +71,9 @@ class RTNavbar extends React.Component {
                                     <span className="mr-auto" style={{color: "#325bfb"}}>Sign In</span>
                                         } id="basic-dropdown">
                                         <SignIn handleLogin={this.props.handleLogin}/>
-                                </NavDropdown>                                
+                                </NavDropdown>
+                                </> 
+                                }
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
                             </Nav>

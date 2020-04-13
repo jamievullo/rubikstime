@@ -22,23 +22,30 @@ class App extends React.Component {
     // const user = data.data.username
     // this.dataOrigin(user)
     }
-}
+  }
 
 //helper function to overcome not setting state 2x in same function and to
 //also pass into conditional to check if the origin of the data is from the 
 //server(to check for login from session) or from user input.   
-dataOrigin = (user) => {
+  dataOrigin = (user) => {
     this.setState({
         isLoggedIn: true,
         user: user
     })
-}
+  }
+
+    handleLogout = () => {
+      this.setState({
+      isLoggedIn: false,
+      user: {}
+      })
+  }
 
   render() {
     return (
       <Router>
         <div>
-          <RTNavbar user={this.state.user} handleLogin={this.handleLogin}/>
+          <RTNavbar user={this.state.user} handleLogin={this.handleLogin} isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleLogout}/>
         </div>
             {/* <Route exact path="/" component={Home} /> */}
             <Route
