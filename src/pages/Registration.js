@@ -33,7 +33,7 @@ class Registration extends React.Component {
                 // callback passed in thru props logging in user after signup
             this.props.handleLogin(response.data)
             //sets response.data.user to userData variable
-            const userData = response.data.user //??
+            // const userData = response.data.user //??
             } else {
             this.setState({
                 errors: response.data.errors
