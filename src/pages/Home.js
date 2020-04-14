@@ -47,7 +47,7 @@ class Home extends React.Component {
         const record = cubetime
         axios.post(`http://localhost:3000/users/${user.id}/cubes/${this.state.currentCube}/add_record`, {record})
             .then(response => {
-                console.log(response)
+                console.log('time successfully pushed')
                 // this.setState({
                 //     totalTimes: response.data.all_times_by_cube,
                 //     last5: response.data.last_5
@@ -57,7 +57,8 @@ class Home extends React.Component {
 
     timesCollection = cubeTime => {
         // console.log(cubeTime)
-        if (this.props.user) {
+        // console.log(this.props.user)
+        if ( Object.keys(this.props.user) > 0 ) {
             this.pushTime(cubeTime)
         }
 
