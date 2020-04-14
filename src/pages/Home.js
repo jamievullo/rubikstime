@@ -21,22 +21,46 @@ class Home extends React.Component {
 
     handleCubeSelection = cube => {
         console.log(cube)
-        //post fetch to current cube for user
-        this.setState({
-            currentCube: cube
-        })
+        //post fetch to current cube for user records by cube
+        //set state for last5 and totalTimes
+        if ( this.props.user ) {
+            const user = this.props.user
+
+            axios.get(`http://localhost:3000/users/${user.id}/cubes/${cube}`)
+                .then(response => {
+                    this.setState({
+                        totalTimes: response.data.all_times_by_cube,
+                        last5: response.data.last_5,
+                        currentCube: cube
+                    })
+                })
+        } else {
+
+            this.setState({
+                currentCube: cube
+            })
+        }
     }
 
     pushTime = cubetime => {
         const user = this.props.user
         const record = cubetime
         axios.post(`http://localhost:3000/users/${user.id}/cubes/${this.state.currentCube}/add_record`, {record})
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response)
+                // this.setState({
+                //     totalTimes: response.data.all_times_by_cube,
+                //     last5: response.data.last_5
+                // })
+            })
     }
 
     timesCollection = cubeTime => {
         // console.log(cubeTime)
-        this.pushTime(cubeTime)
+        if (this.props.user) {
+            this.pushTime(cubeTime)
+        }
+
         let times = [cubeTime, ...this.state.totalTimes]
         let last5 = [cubeTime, ...this.state.last5]
         if (last5.length > 5) {
