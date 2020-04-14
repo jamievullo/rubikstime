@@ -3,7 +3,7 @@ import CubeSelector from '../components/CubeSelector'
 import Scrambles from '../components/Scrambles'
 import Timer from '../components/Timer'
 import RecentTimes from '../components/RecentTimes'
-// import OverallStatistics from '../components/OverallStatistics'
+import OverallStatistics from '../components/OverallStatistics'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -64,7 +64,7 @@ class Home extends React.Component {
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='3'><RecentTimes currentCube={this.state.currentCube} last5={this.state.last5}/></Col>
-                        {/* <Col md='3'><OverallStatistics currentCube={this.state.currentCube}/></Col> */}
+                        <Col md='3'><OverallStatistics currentCube={this.state.currentCube}/></Col>
                         <Col md='6'><UpcomingWCAEvents /></Col>
                     </Row>
                 </Container> 
