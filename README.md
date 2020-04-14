@@ -1,8 +1,8 @@
 Jamie Vullo and Kelley Chaplain | Javascript, React, Ruby, and Rails as an API.
 
-<img src='rubikstimetrackerlogo3.png' alt='' style='zoom:50%;'>
+<img src='rubikstimetrackerlogo3.png' alt=''>
 
-# TravelSaver
+# RubiksTime.com
 A web application made using the Rails framework as an API for backend and the React JavaScript libraray for frontend. 
 
 ## Table of Contents
