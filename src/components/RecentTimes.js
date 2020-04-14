@@ -133,7 +133,7 @@ class RecentTimes extends React.Component {
             <div>
                 <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
-                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Recent Times</strong></CardTitle>
+                        <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Recent Times - {this.props.currentCube}</strong></CardTitle>
                         <div id='recent-times' style={{color: '#364182'}}>
                         <CardSubtitle>
                             Time 1 = <strong>{this.formatTime(this.state.time1)}</strong>   

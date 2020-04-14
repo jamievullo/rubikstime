@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import RTNavbar from './components/RTNavbar';
 import Store from './pages/Store'
 import Home from './pages/Home'
+import UserPage from './pages/UserPage'
 import Footer from './components/Footer';
 
 class App extends React.Component {
@@ -49,11 +50,13 @@ class App extends React.Component {
         </div>
             {/* <Route exact path="/" component={Home} /> */}
             <Route
-              path='/'
+              exact path='/'
               render={(props) => <Home {...props} user={this.state.user} />}
             />
-            <Route exact path="/store" component={Store} />
+            <Route path="/store" component={Store} />
+            <Route path="/user_page" component={UserPage} />
           <Footer />
+      
       </Router>
     );
   }

@@ -1,22 +1,26 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row';
 import {
     Card, CardBody,
     CardTitle, CardSubtitle
     } from 'reactstrap';
+import { Col } from 'react-bootstrap';
 
-class OverallStatistics extends React.Component {
-    //when logged in a users best times and overall averages will be called from 
-    //the database to populate this component for rendering.
-    fetchTimesFromDatabase() {
+class UserPage extends React.Component {
 
-    }
+    //need all cubes that user has stats with *eyes*
 
     render() {
         return (
             <div>
+                <Row style={{textAlign: 'center', color: '#364182'}}>
+                    <Col>
+                    <strong>(user name) - Lifetime Stats</strong>
+                    </Col>
+                </Row>
                 <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
-                    <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>Lifetime Stats - {this.props.currentCube}</strong></CardTitle>
+                    <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong> - Cube Name - </strong></CardTitle>
                         <div id='lifetime-stats' style={{color: '#364182'}}>
                             <CardSubtitle>Personal Best -</CardSubtitle>
                             <CardSubtitle>Lifetime Solves -</CardSubtitle>
@@ -33,4 +37,4 @@ class OverallStatistics extends React.Component {
     }
 }
 
-export default OverallStatistics
+export default UserPage
