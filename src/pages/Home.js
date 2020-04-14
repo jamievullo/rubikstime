@@ -42,7 +42,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div id="home-container">                
+            <div id="home-container">               
                 <Container fluid={true} style={{paddingBottom: "4em"}}>
                     <Row className="justify-content-center"> 
                         <CubeSelector handleCubeSelection={this.handleCubeSelection}/>
@@ -55,7 +55,7 @@ class Home extends React.Component {
                     </Row>
                     <Row className="justify-content-center">
                         <Col md='3'><RecentTimes currentCube={this.state.currentCube} last5={this.state.last5}/></Col>
-                        <Col md='3'><OverallStatistics currentCube={this.state.currentCube}/></Col>
+                        {/* <Col md='3'><OverallStatistics currentCube={this.state.currentCube}/></Col> */}
                         <Col md='6'><UpcomingWCAEvents /></Col>
                     </Row>
                 </Container> 

@@ -10,6 +10,7 @@ import { NavDropdown } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav'
 import brand from '../assets/rubikstimetrackerlogo3.png'
 import axios from 'axios'
+import Modal1 from '../components/Modal1'
 
 class RTNavbar extends React.Component {
 
@@ -79,6 +80,7 @@ class RTNavbar extends React.Component {
                                 }
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'><Modal1 /></Link>
                             </Nav>
                         </Navbar.Collapse>  
                 </Navbar>                 
