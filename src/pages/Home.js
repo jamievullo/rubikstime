@@ -3,11 +3,12 @@ import CubeSelector from '../components/CubeSelector'
 import Scrambles from '../components/Scrambles'
 import Timer from '../components/Timer'
 import RecentTimes from '../components/RecentTimes'
-import OverallStatistics from '../components/OverallStatistics'
+// import OverallStatistics from '../components/OverallStatistics'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
+import axios from 'axios'
 
 class Home extends React.Component {
     //gets user object from App through props
@@ -26,8 +27,16 @@ class Home extends React.Component {
         })
     }
 
+    pushTime = cubetime => {
+        const user = this.props.user
+        const record = cubetime
+        axios.post(`http://localhost:3000/users/${user.id}/cubes/${this.state.currentCube}/add_record`, {record})
+            .then(response => console.log(response))
+    }
+
     timesCollection = cubeTime => {
         // console.log(cubeTime)
+        this.pushTime(cubeTime)
         let times = [cubeTime, ...this.state.totalTimes]
         let last5 = [cubeTime, ...this.state.last5]
         if (last5.length > 5) {
