@@ -29,7 +29,7 @@ class RTNavbar extends React.Component {
         // This allows our Rails server to set and read the cookie on the front-end’s browser.
         
         .then(response => {
-            console.log(response)
+            // console.log(response)
         if (response.data.logged_in) {
             this.props.handleLogin(response)
         } else {
@@ -61,7 +61,13 @@ class RTNavbar extends React.Component {
                             <Nav className="ml-auto">
                                 {this.props.isLoggedIn ?
                                 <>
-                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/user_page'>Your Page</Link>
+                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} 
+                                    to={{
+                                        pathname: '/user-page',
+                                            state: {
+                                                user: this.props.user
+                                            }
+                                    }}>Your Page</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} onClick={this.handleLogoutClick} to='/'>Logout</Link>
                                 </>
                                 : 

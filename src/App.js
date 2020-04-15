@@ -54,7 +54,7 @@ class App extends React.Component {
               render={(props) => <Home {...props} user={this.state.user} />}
             />
             <Route path="/store" component={Store} />
-            <Route path="/user_page" component={UserPage} />
+            <Route path="/user-page" component={UserPage} />
           <Footer />
       
       </Router>
