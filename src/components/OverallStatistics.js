@@ -5,9 +5,9 @@ import {
     } from 'reactstrap';
 
 class OverallStatistics extends React.Component {
-    //when logged in a users best times and overall averages will be called from 
-    //the database to populate this component for rendering.
-    fetchTimesFromDatabase() {
+   
+    
+    filterThroughCubeTimes() {
 
     }
 

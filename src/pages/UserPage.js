@@ -11,7 +11,7 @@ class UserPage extends React.Component {
 
     state = {
         user: '',
-        cubeTimes: ''
+        cubeTimes: []
     }
 
     //need all cubes that user has stats with *eyes*
@@ -24,8 +24,34 @@ class UserPage extends React.Component {
 
     fetchUserData = user => {
         axios.get(`http://localhost:3000/users/${user.id}`)
-            .then(response => console.log(response))
+            .then(response => {
+                this.setState({
+                    user: response.data.user,
+                    cubeTimes: response.data.cubeTimes
+                })
+                this.groupTimesByCube()
+            })
     }
+
+    groupTimesByCube = () => {
+        let cubeTypes = {}
+
+        this.state.cubeTimes.map(t => {
+            return cubeTypes[t.cube_id] 
+            ? 
+            cubeTypes[t.cube_id].push(t) 
+            : 
+            cubeTypes[t.cube_id] = [t]
+        })
+
+        console.log(cubeTypes)
+        return cubeTypes
+    
+    }
+
+        // return cubeTypes
+        //sorts through array of times and creates object by cubetype. will then map over that object and give each array of times by cubetime to oberallstatistics componenet
+    
 
 
 
@@ -34,7 +60,7 @@ class UserPage extends React.Component {
             <div>
                 <Row style={{textAlign: 'center', color: '#364182'}}>
                     <Col>
-                    <strong>(user name) - Lifetime Stats</strong>
+                    <strong>{this.state.user.username} - Lifetime Stats</strong>
                     </Col>
                 </Row>
                 <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
