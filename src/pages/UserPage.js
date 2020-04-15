@@ -1,17 +1,19 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row';
-import {
-    Card, CardBody,
-    CardTitle, CardSubtitle
-    } from 'reactstrap';
+// import {
+//     Card, CardBody,
+//     CardTitle, CardSubtitle
+//     } from 'reactstrap';
 import { Col } from 'react-bootstrap';
 import axios from 'axios'
+import OverallStatistics from '../components/OverallStatistics'
 
 class UserPage extends React.Component {
 
     state = {
         user: '',
-        cubeTimes: []
+        cubeTimes: [],
+        cubeObj: {}
     }
 
     //need all cubes that user has stats with *eyes*
@@ -45,7 +47,9 @@ class UserPage extends React.Component {
         })
 
         console.log(cubeTypes)
-        return cubeTypes
+        this.setState({
+            cubeObj: cubeTypes
+        })
     
     }
 
@@ -63,7 +67,8 @@ class UserPage extends React.Component {
                     <strong>{this.state.user.username} - Lifetime Stats</strong>
                     </Col>
                 </Row>
-                <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
+                { Object.keys(this.state.cubeObj).map(c => <OverallStatistics cube={this.state.cubeObj[c]} cubeId={c} key={c} />)}
+                {/* <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
                     <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong> - Cube Name - </strong></CardTitle>
                         <div id='lifetime-stats' style={{color: '#364182'}}>
@@ -76,7 +81,7 @@ class UserPage extends React.Component {
                             <CardSubtitle>Best lifetime Avg 5 -</CardSubtitle>
                         </div>
                     </CardBody>
-                </Card>
+                </Card> */}
             </div>
         )
     }
