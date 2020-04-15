@@ -5,10 +5,29 @@ import {
     CardTitle, CardSubtitle
     } from 'reactstrap';
 import { Col } from 'react-bootstrap';
+import axios from 'axios'
 
 class UserPage extends React.Component {
 
+    state = {
+        user: '',
+        cubeTimes: ''
+    }
+
     //need all cubes that user has stats with *eyes*
+    componentDidMount() {
+        if ( this.props.location.state.user ) {
+            this.fetchUserData(this.props.location.state.user)
+            //need to fetch user info on component mount
+        }
+    }
+
+    fetchUserData = user => {
+        axios.get(`http://localhost:3000/users/${user.id}`)
+            .then(response => console.log(response))
+    }
+
+
 
     render() {
         return (
