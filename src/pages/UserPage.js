@@ -46,7 +46,7 @@ class UserPage extends React.Component {
             cubeTypes[t.cube_id] = [t]
         })
 
-        console.log(cubeTypes)
+        // console.log(cubeTypes)
         this.setState({
             cubeObj: cubeTypes
         })
@@ -67,7 +67,7 @@ class UserPage extends React.Component {
                     <strong>{this.state.user.username} - Lifetime Stats</strong>
                     </Col>
                 </Row>
-                { Object.keys(this.state.cubeObj).map(c => <OverallStatistics cube={this.state.cubeObj[c]} cubeId={c} key={c} />)}
+                { Object.keys(this.state.cubeObj).map(c => <OverallStatistics times={this.state.cubeObj[c]} cubeId={c} key={c} />)}
                 {/* <Card style={{borderWidth: '.15em', borderColor: '#364182'}}>
                     <CardBody>
                     <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong> - Cube Name - </strong></CardTitle>

@@ -29,7 +29,7 @@ class RTNavbar extends React.Component {
         // This allows our Rails server to set and read the cookie on the front-end’s browser.
         
         .then(response => {
-            console.log(response)
+            // console.log(response)
         if (response.data.logged_in) {
             this.props.handleLogin(response)
         } else {

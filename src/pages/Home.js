@@ -58,7 +58,7 @@ class Home extends React.Component {
     timesCollection = cubeTime => {
         // console.log(cubeTime)
         // console.log(this.props.user)
-        if ( Object.keys(this.props.user) > 0 ) {
+        if ( Object.keys(this.props.user).length > 0 ) {
             this.pushTime(cubeTime)
         }
 
