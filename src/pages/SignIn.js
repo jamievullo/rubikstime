@@ -27,7 +27,7 @@ class SignIn extends React.Component {
             password: password
             }
         
-        axios.post('http://localhost:3000/login', {user})
+        axios.post('https://rubikstime-backend.herokuapp.com/login', {user})
         .then(response => {
         if (response.data.logged_in) {
             this.props.handleLogin(response.data)

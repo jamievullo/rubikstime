@@ -25,7 +25,7 @@ class UserPage extends React.Component {
     }
 
     fetchUserData = user => {
-        axios.get(`http://localhost:3000/users/${user.id}`)
+        axios.get(`https://rubikstime-backend.herokuapp.com/users/${user.id}`)
             .then(response => {
                 this.setState({
                     user: response.data.user,

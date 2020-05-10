@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Card, CardBody,
     CardTitle, CardSubtitle,
-    Button
+    // Button
     } from 'reactstrap';
 
 class RecentTimes extends React.Component {
@@ -139,7 +139,7 @@ class RecentTimes extends React.Component {
                             Time 1 = <strong>{this.formatTime(this.state.time1)}</strong>   
                             {/* <Button onClick={this.plusTwo} style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>Plus 2</Button> */}
                             {/* <Button style={{padding: '0px', marginLeft: '.424em', backgroundColor: '#ffc600', color: '#364182'}}>DNF</Button> */}
-                            <Button style={{padding: '0px', marginLeft: '1.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button>
+                            {/* <Button onClick={this.props.deleteLastTime} style={{padding: '0px', marginLeft: '1.424em', backgroundColor: '#ffc600', color: '#364182'}}>Delete</Button> */}
                         </CardSubtitle>
                         <CardSubtitle>Time 2 = <strong>{this.formatTime(this.state.time2)}</strong></CardSubtitle>
                         <CardSubtitle> Time 3 = <strong>{this.formatTime(this.state.time3)}</strong></CardSubtitle>

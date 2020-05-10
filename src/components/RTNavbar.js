@@ -25,7 +25,7 @@ class RTNavbar extends React.Component {
 
     loginStatus = () => {
         //ajax call to sessions custom route
-        axios.get('http://localhost:3000/logged_in')
+        axios.get('https://rubikstime-backend.herokuapp.com/logged_in')
         // This allows our Rails server to set and read the cookie on the front-end’s browser.
         
         .then(response => {
@@ -40,7 +40,7 @@ class RTNavbar extends React.Component {
         }
     
     handleLogoutClick = () => {
-        axios.delete('http://localhost:3000/logout')
+        axios.delete('https://rubikstime-backend.herokuapp.com/logout')
         .then(response => {
         this.props.handleLogout()
         })
@@ -84,8 +84,8 @@ class RTNavbar extends React.Component {
                                 </NavDropdown>
                                 </> 
                                 }
-                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link>
-                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
+                                {/* <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link> */}
+                                <Link className="nav-link" onClick={(e) => e.preventDefault()} style={{color: "#325bfb", margin: 'inherit'}}>Coming Soon - Merch!!!</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'><Modal1 /></Link>
                             </Nav>
                         </Navbar.Collapse>  
