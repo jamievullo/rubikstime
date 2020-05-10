@@ -55,6 +55,19 @@ class Home extends React.Component {
             })
     }
 
+    // deleteLastTime = () => {
+    //     console.log("delete last time")
+    //     axios.delete(`http://localhost:3000/users/${this.props.user.id}/delete_last_record`)
+    //         .then(response => {
+    //             if (response.data.status === "success") {
+    //                 this.setState({
+    //                     totalTimes: this.state.totalTimes.splice(0, 1),
+    //                     last5: this.state.last5.splice(0, 1)
+    //                 })
+    //             }
+    //         })
+    // }
+
     timesCollection = cubeTime => {
         // console.log(cubeTime)
         // console.log(this.props.user)
@@ -88,7 +101,7 @@ class Home extends React.Component {
                         <Col md='8'><Timer timesCollection={this.timesCollection}/></Col>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col md='3'><RecentTimes currentCube={this.state.currentCube} last5={this.state.last5}/></Col>
+                        <Col md='3'><RecentTimes deleteLastTime={this.deleteLastTime} currentCube={this.state.currentCube} last5={this.state.last5}/></Col>
                         {/* <Col md='3'><OverallStatistics currentCube={this.state.currentCube}/></Col> */}
                         <Col md='6'><UpcomingWCAEvents /></Col>
                     </Row>
