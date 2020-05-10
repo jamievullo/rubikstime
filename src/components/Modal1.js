@@ -15,8 +15,14 @@ const Modal1 = (props) => {
         <span onClick={toggle}>Help</span>
         <Modal isOpen={modal} toggle={toggle} className={className}>
             <ModalHeader toggle={toggle}>RubiksTime Help</ModalHeader>
-            <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <ModalBody style={{color: '#364182'}}>
+                <p>Hello, and Welcome to Rubiks Time!</p> 
+                <p>To get started, select the cube you would like to keep track of and change cubes as often as you would like.
+                Press and hold the spacebar to set the timer and let go to start timing. 
+                Press the spacebar again quickly to stop the timer and record your time.</p>
+                <p>Before you exit, please consider registering for Rubiks Time to take advantage of the extras including complete
+                tracking history of your times on all cubes!</p> 
+                <p>We will be launching a Merch shop soon- please check back!!! :)</p>
             </ModalBody>
             <ModalFooter>
             {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
