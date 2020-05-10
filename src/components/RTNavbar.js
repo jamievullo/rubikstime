@@ -85,7 +85,7 @@ class RTNavbar extends React.Component {
                                 </> 
                                 }
                                 {/* <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'>Home</Link> */}
-                                <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/store'>Get the Merch!</Link>
+                                <Link className="nav-link" onClick={(e) => e.preventDefault()} style={{color: "#325bfb", margin: 'inherit'}}>Coming Soon - Merch!!!</Link>
                                 <Link className="nav-link" style={{color: "#325bfb", margin: 'inherit'}} to='/'><Modal1 /></Link>
                             </Nav>
                         </Navbar.Collapse>  
