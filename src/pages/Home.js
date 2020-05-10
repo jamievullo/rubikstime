@@ -3,7 +3,7 @@ import CubeSelector from '../components/CubeSelector'
 import Scrambles from '../components/Scrambles'
 import Timer from '../components/Timer'
 import RecentTimes from '../components/RecentTimes'
-import OverallStatistics from '../components/OverallStatistics'
+// import OverallStatistics from '../components/OverallStatistics'
 import UpcomingWCAEvents from '../components/UpcomingWCAEvents'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

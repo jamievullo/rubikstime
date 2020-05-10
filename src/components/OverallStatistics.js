@@ -28,17 +28,29 @@ class OverallStatistics extends React.Component {
 
     lifetimeAvg = times => {
         let timesTotal = 0
-        
+        if(times && times.length > 0) {
         times.map(t => {
             return timesTotal += t.cube_time
             // console.log(t)
         })
                 
         return (timesTotal/times.length).toFixed(2)
+        }
+        return null
     }
 
     bestLifetimeAvg5 = times => {
 
+    }
+
+    formatTime = time => {
+        if (time > 0) {
+            let milliseconds = ("0" + (Math.floor(time / 10) % 100)).slice(-2);
+            let seconds = ("0" + (Math.floor(time / 1000) % 60)).slice(-2);
+            let minutes = ("0" + (Math.floor(time / 60000) % 60)).slice(-2);
+        
+            return minutes > 0 ? `${minutes}:${seconds}.${milliseconds}` : `${seconds}.${milliseconds}`
+        }
     }
 
     render() {
@@ -52,18 +64,21 @@ class OverallStatistics extends React.Component {
                         <CardBody>
                         <CardTitle style={{textAlign: 'center', color: '#364182'}}><strong>{cubeName}</strong></CardTitle>
                             <div id='lifetime-stats' style={{color: '#364182'}}>
-                                <CardSubtitle>Personal Best - {this.personalBest(times)}</CardSubtitle>
+                                <CardSubtitle>Personal Best - {this.formatTime(this.personalBest(times))}</CardSubtitle>
                                 <CardSubtitle>Lifetime Solves - {times.length}</CardSubtitle>
-                                <CardSubtitle>Lifetime Avg - {this.lifetimeAvg(times)}</CardSubtitle>
+                                <CardSubtitle>Lifetime Avg - {this.formatTime(this.lifetimeAvg(times))}</CardSubtitle>
                                 {/* <CardSubtitle>Best Session Time -</CardSubtitle> */}
                                 {/* <CardSubtitle>Overall Session Avg -</CardSubtitle> */}
                                 {/* <CardSubtitle>Best Session Avg 5 -</CardSubtitle> */}
-                                <CardSubtitle>Best lifetime Avg 5 -</CardSubtitle>
+                                {/* <CardSubtitle>Best lifetime Avg 5 -</CardSubtitle> */}
                             </div>
                         </CardBody>
                     </Card>
                 </div>
             )
+        }
+        else {
+            return null
         }
     }
 }

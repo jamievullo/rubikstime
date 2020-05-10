@@ -1,12 +1,9 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row';
-// import {
-//     Card, CardBody,
-//     CardTitle, CardSubtitle
-//     } from 'reactstrap';
 import { Col } from 'react-bootstrap';
 import axios from 'axios'
 import OverallStatistics from '../components/OverallStatistics'
+import { Link } from 'react-router-dom';
 
 class UserPage extends React.Component {
 
@@ -54,14 +51,12 @@ class UserPage extends React.Component {
     }
 
         // return cubeTypes
-        //sorts through array of times and creates object by cubetype. will then map over that object and give each array of times by cubetime to oberallstatistics componenet
-    
-
-
+        //sorts through array of times and creates object by cubetype. will then map over that object and give each array of times by cubetime to overallstatistics componenet
 
     render() {
         return (
             <div>
+                <Link className="Home" style={{color: "#325bfb", margin: 'inherit'}} onClick={this.handleHome} to='/'>Back to Timer</Link>
                 <Row style={{textAlign: 'center', color: '#364182'}}>
                     <Col>
                     <strong>{this.state.user.username} - Lifetime Stats</strong>
