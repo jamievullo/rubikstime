@@ -26,7 +26,7 @@ class Home extends React.Component {
         if ( this.props.user ) {
             const user = this.props.user
 
-            axios.get(`http://localhost:3000/users/${user.id}/cubes/${cube}`)
+            axios.get(`https://rubikstime-backend.herokuapp.com/users/${user.id}/cubes/${cube}`)
                 .then(response => {
                     this.setState({
                         totalTimes: response.data.all_times_by_cube,
@@ -45,7 +45,7 @@ class Home extends React.Component {
     pushTime = cubetime => {
         const user = this.props.user
         const record = cubetime
-        axios.post(`http://localhost:3000/users/${user.id}/cubes/${this.state.currentCube}/add_record`, {record})
+        axios.post(`https://rubikstime-backend.herokuapp.com/users/${user.id}/cubes/${this.state.currentCube}/add_record`, {record})
             .then(response => {
                 console.log('time successfully pushed')
                 // this.setState({

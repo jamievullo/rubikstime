@@ -28,7 +28,7 @@ class Registration extends React.Component {
             username: username,
             password: password
             }
-        axios.post('http://localhost:3000/users', {user})
+        axios.post('https://rubikstime-backend.herokuapp.com/users', {user})
         .then(response => {
             if (response.data.status === 'created') {
                 console.log("user created")

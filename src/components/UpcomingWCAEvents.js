@@ -13,7 +13,7 @@ class UpcomingWCAEvents extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch("http://localhost:3000/wca_events")
+        fetch("https://rubikstime-backend.herokuapp.com/wca_events")
         .then(response => response.json())
         // .then(data => console.log(data.results))
         .then(data => this.setState({
